@@ -1,4 +1,4 @@
-<img src="https://github.com/nwvbug/Lang/blob/main/nwvbugpurple.png" width="540" height="540">
+<img src="https://github.com/nwvbug/Lang/blob/main/nwvbugpurple.png" width="432" height="432">
 
 Welcome to the homepage for NWVBUG!
 
