@@ -27,6 +27,7 @@ function stopAnimation(){
     console.log("inside stop animation")
     document.getElementById("myvideo").style.display = "none";
     document.getElementById("vidcont").style.display = "none";
+    //github please
 }
 
 function onLoad() {
