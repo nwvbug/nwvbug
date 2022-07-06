@@ -1,0 +1,217 @@
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * alfarn:
+ *   - http://typekit.com/eulas/00000000000000007735bd28
+ *
+ * © 2009-2022 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2022-07-06 01:39:52 UTC"}*/
+
+@import url("https://p.typekit.net/p.css?s=1&k=zvx6ogf&ht=tk&f=39858&a=42691170&app=typekit&e=css");
+
+@font-face {
+font-family:"alfarn";
+src:url("https://use.typekit.net/af/599ed7/00000000000000007735bd28/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/599ed7/00000000000000007735bd28/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/599ed7/00000000000000007735bd28/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+.tk-alfarn { font-family: "alfarn",sans-serif; }
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+body {
+	background: url(https://i.pinimg.com/736x/ec/76/b2/ec76b25712c3965c246bc1927cda2181.jpg) no-repeat;
+	/* Keep the inherited background full size. */
+	background-attachment: fixed; 
+	background-size: cover;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+	width: 90vw;
+	/* height: 30rem; */
+	box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);	
+	border-radius: 5px;
+	position: relative;
+	z-index: 1;
+	background: inherit;
+	overflow: hidden;
+    flex:1; 
+    margin-top:15px;
+    
+}
+
+.container:before {
+	content: "";
+	position: absolute;
+	background: inherit;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+	filter: blur(10px);
+	
+}
+
+.foot{
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    color: white;
+    width: 100%;
+    bottom: 0%;
+    position: fixed;
+    
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);	
+	border-radius: 5px;
+	position: relative;
+	z-index: 1;
+	background: inherit;
+	overflow: hidden;
+    font-family: "alfarn",sans-serif;
+    
+}
+
+
+.foot:before{
+   
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+
+}
+
+.image{
+    height:20vh;
+    width:auto;
+    
+}
+
+.bigbox{
+    display:flex;
+    flex-direction: column;
+    height:100vh;
+    width:100vw;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.horizontalbox{
+    display:flex;
+    flex-direction: horizontal;
+    height:100vh;
+    width:100vw;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+.horizontalminibox{
+    flex:1;
+    height: 100%;
+
+    position: relative;
+}
+
+.thumbnail{
+    width:51%;
+    margin-top:-7%;
+
+    position: absolute;
+}
+
+.thumbnail2{
+    width:84%;
+    margin-top:-10%;
+    
+    position: absolute;
+}
+
+.horizontalminibox2{
+    flex:0.85;
+    height: 100%;
+    
+}
+
+/* .horizontalminibox2:hover {
+    animation: becomelargee;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    flex: 3;
+} */
+
+.text{
+    font-family: "alfarn",sans-serif;
+    opacity: 0;
+}
+
+/* #text1:before {
+    height: 100%;
+    width: 100%;
+    background-color: orange;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Animations for the javascript by the one and only anklestBowl */
+.hide {
+    opacity: 0;
+    animation: hide;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes hide {
+    from {opacity: 1}
+    to {opacity: 0}
+}
+
+.show {
+    animation: show;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+}
+
+@keyframes show {
+    0% {opacity: 0}
+    50% {opacity: 0}
+    100% {opacity: 1}
+}
