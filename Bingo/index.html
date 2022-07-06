@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="code.js"></script>
+    <title>Bingo!</title>
+    <link rel="icon" href="BingoIconCol.png">
+</head>
+<body style = "background-color: #66A3BB;" onload = "tutorial(), instructions()">
+    <div class="sameline">
+        <img src="BingoLogocol.png" class="nwvbuglogo">
+        <h2 class="instructions" id="triviaUIchoice"></h2>
+    </div>
+
+    <div class="samelineSelection">
+        <h2 id = "selection" class="selection" onclick="instructions()">Instructions & Settings</h2>
+        <h2 id = "selection2" class="selection" onclick="decider('standard')">Standard</h2>
+        <h2 id = "selection3" class="selection" onclick="decider('x')">X Bingo</h2>
+        <h2 id = "selection4" class="selection" onclick = "decider('plus')">+ Bingo</h2>
+        <h2 id = "selection5" class="selection" onclick="decider('fourCorners')">Four Corners</h2>
+        <h2 class="selection" id ="selection7" onclick="decider('crazy')">Crazy Bingo</h2>
+        <h2 id="selection6" class="selection" onclick="about()">About</h2>
+    </div>
+    <h3 class= "instructions" id="instructions"> </h3>
+    <h3 class="instructions" id="triviaChoice"></h3>
+    
+    <h4 class="smallselection" id="triviaYes" onclick="triviaTrue(true)"></h4>
+    <h4 class="smallselection" id="triviaNo" onclick="triviaTrue(false)"></h4>
+    
+    <h3 class="instructions" id="instructions2"></h3>
+    <h4 class="smallselection" id="clearInst" onclick="dismissInst()"></h4>
+    <h1 class= "largeSelection" id="closeAbt" onclick="closeAbout()"></h1>
+    <h2 class="instructions" id="aboutTextHeader"></h2>
+    <h3 class="instructions" id="aboutText"></h3>
+    <h2 class="instructions" id="aboutMeHeader"></h2>
+    <h3 class="instructions" id="aboutMe"></h3>
+    <img class="logoImg" id="nateLogo" src="nate vemuri logo WHITE BACKGROUNDbruh.png" alt="Nate logo">
+
+    <h1 class="number" id="triviaQuestionDisplay"></h1>
+    <h2 class="number" id="triviaQuestionAnswer"></h2>
+    <h1 class="number1" id= "called"></h1>
+    <h3 class="number" id="previousNum"></h3>
+
+    <div id="fileInput" class="chooseFile">
+        <input type="file">
+        <button id="myBtn">Try it</button>
+        <pre id="file"></pre>
+    </div>
+    
+    
+    
+    
+    <div class="sameline">
+        <h1 class="selection" id="callButton" onclick = "logic()"></h1>
+        <h1 class="selection" id="done" onclick="check()"></h1>
+    </div>
+    <h1 class="selection" id="callButton" onclick = "logic()"></h1>
+    <h1 class= "instructions" id="warning"></h1>
+    <h2 class = "selection" id="reset" onclick="location.reload()"></h2>
+    
+</body>
+</html>
