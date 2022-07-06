@@ -16,7 +16,7 @@ Lang is a forigen-language study program focused on verbs. It is currently the p
 ## Bingo-Game:
 
 
-<img src="https://github.com/nwvbug/nwvbug-logos/blob/main/NWVBUG's%20Bingo%20Logos/BingoLogo.png" width="175" height="175">
+<img src="https://github.com/nwvbug/nwvbug-logos/blob/main/NWVBUG's%20Bingo%20Logos/BingoLogocol.png" width="175" height="175">
 
 Bingo-Game is an automated bingo roller that allows for different modes of play. It includes trivia functionality and is currently being hosted at https://nwvbug.github.io/bingogame/index.html.
 
