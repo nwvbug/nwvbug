@@ -21,3 +21,16 @@ function doAnimationButUndo(editclass, text){
     textObj.classList.add("hide")
     // toEdit.style.display = "block";
 } 
+
+function onLoad() {
+    // get the resolution of the screen
+    var x = window.innerWidth;
+    var y = window.innerHeight;
+    // calculate the aspect ratio of the screen
+    var aspectRatio = x / y;
+    // if the screen is vertical (taller than wide) make the website empty
+    if (aspectRatio < 1) {
+        alert("Please use a horizontal screen");
+        location.replace("https://github.com/nwvbug")
+    }
+}
