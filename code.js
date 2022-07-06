@@ -26,6 +26,7 @@ function doAnimationButUndo(editclass, text){
 function stopAnimation(){
     console.log("inside stop animation")
     document.getElementById("myvideo").style.display = "none";
+    document.getElementById("vidcont").style.display = "none";
 }
 
 function onLoad() {
