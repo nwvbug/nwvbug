@@ -134,7 +134,7 @@ body {
 }
 
 .thumbnail{
-    width:51%;
+    width:51.1111%;
     margin-top:-7%;
 
     position: absolute;
@@ -164,17 +164,6 @@ body {
     font-family: "alfarn",sans-serif;
     opacity: 0;
 }
-/* 
-#text1:after {
-    height: 100%;
-    width: 100%;
-    background-color: orange;
-}
-
-
- */
-
-
 
 
 
