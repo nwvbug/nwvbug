@@ -10,7 +10,7 @@
 
 <img src="https://github.com/nwvbug/nwvbug-logos/blob/main/Lang%20Logos/RedesLangwBg.png" width="175" height="175">
 
-Lang is a forigen-language study program focused on verbs. It is currently the project being hosted on the domain https://nwvbug.com.
+Lang is a forigen-language study program focused on verbs. It is currently the project being hosted on the domain https://nwvbug.com/Lang
 
 
 ## NWVBUG's Bingo:
@@ -18,8 +18,7 @@ Lang is a forigen-language study program focused on verbs. It is currently the p
 
 <img src="https://github.com/nwvbug/nwvbug-logos/blob/main/NWVBUG's%20Bingo%20Logos/BingoLogocol.png" width="175" height="175">
 
-Bingo-Game is an automated bingo roller that allows for different modes of play. It includes trivia functionality and is currently being hosted at https://nwvbug.github.io/bingogame/index.html.
+NWVBUG's Bingo is an automated bingo roller that allows for different modes of play. It includes trivia functionality and is currently being hosted at https://nwvbug.com/Bingo
 
-## Website info:
 
-You can see that only one project is hosted on our [master domain](https://nwvbug.com) at a time. This is typically the most polished or useful project at the time. All others can be found on their GitHub pages url: https ://nwvbug.github.io/ *projectname* / *landingpage*, which is included in the repository's description. 
+For more details, go to https://nwvbug.com
