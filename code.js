@@ -22,6 +22,12 @@ function doAnimationButUndo(editclass, text){
     // toEdit.style.display = "block";
 } 
 
+
+function stopAnimation(){
+    console.log("inside stop animation")
+    document.getElementById("myvideo").style.display = "none";
+}
+
 function onLoad() {
     // get the resolution of the screen
     var x = window.innerWidth;
@@ -33,4 +39,13 @@ function onLoad() {
         alert("Please use a horizontal screen");
         location.replace("https://github.com/nwvbug")
     }
+
+    document.getElementById("myvideo").play()
+    console.log("played video")
+    setTimeout(stopAnimation, 2000)
+    
+    
+
 }
+
+

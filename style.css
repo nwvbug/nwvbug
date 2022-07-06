@@ -31,6 +31,16 @@ body {
 	justify-content: center;
 	height: 100vh;
     overflow: hidden;
+    margin:0;
+}
+
+
+
+
+.intro{
+    width:100vw;
+    margin-top:-5%;
+    
 }
 
 .container {
