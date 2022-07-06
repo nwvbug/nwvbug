@@ -13,7 +13,7 @@
 Lang is a forigen-language study program focused on verbs. It is currently the project being hosted on the domain https://nwvbug.com.
 
 
-## Bingo-Game:
+## NWVBUG's Bingo:
 
 
 <img src="https://github.com/nwvbug/nwvbug-logos/blob/main/NWVBUG's%20Bingo%20Logos/BingoLogocol.png" width="175" height="175">
