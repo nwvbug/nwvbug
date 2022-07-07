@@ -1,10 +1,9 @@
 <img src="https://github.com/nwvbug/Lang/blob/main/nwvbugpurple.png" width="300" height="300">
 
-# Welcome to the homepage for NWVBUG!
-
-### NWVBUG is the name for all of my web development projects. 
+# Welcome to the GitHub homepage for NWVBUG Development!
 
 
+Go to https://nwvbug.com for the most up-to-date informaton regarding projects.
 
 ## Lang: 
 
@@ -26,5 +25,5 @@ NWVBUG's Bingo is an automated bingo roller that allows for different modes of p
 <img src="https://github.com/nwvbug/nwvbug-logos/blob/main/SpamBot/Continuity%20SpamBot.png" width="175" height="175">
 
 SpamBot is a state-of-the-art AI Chatbot that currrently has an interface through Discord. It runs on the Davinci GPT-3 Language Processing Model from OpenAI. It has memory and can reference details from earlier in the conversation. It's personality is customizable through the spaCy prompt-addition system, which was developed by RyCorp.
+More details on https://nwvbug.com/projects.html
 
-For more details, go to https://nwvbug.com
