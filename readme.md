@@ -9,21 +9,20 @@ Go to https://nwvbug.com for the most up-to-date informaton regarding projects.
 
 <img src="https://github.com/nwvbug/nwvbug-logos/blob/main/Lang%20Logos/RedesLangwBg.png" width="175" height="175">
 
-Lang is a forigen-language study program focused on verbs. It is currently the project being hosted on the domain https://nwvbug.com/Lang
-
+Tired of old, ad-filled, and boring study sessions? Lang is the site for you! Lang features built in French verbs, and allows you to make your own lists to study whatever language you want. Review with flashcards, build memory with the writing mode, or take a practice test and be ready to get the A+. All of this and more, completely free and with no ads.
+https://nwvbug.com/Lang/index.html
 
 ## NWVBUG's Bingo:
 
 
 <img src="https://github.com/nwvbug/nwvbug-logos/blob/main/NWVBUG's%20Bingo%20Logos/BingoLogocol.png" width="175" height="175">
 
-NWVBUG's Bingo is an automated bingo roller that allows for different modes of play. It includes trivia functionality and is currently being hosted at https://nwvbug.com/Bingo
-
+Play a world-class game of Bingo with our state of the art bingo caller. The fun never ends, as you can play many different game-modes including (but not limited to) crazy bingo, X bingo, and 4 corners. Put your thinking cap on and enable the trivia mode! You can even upload your own trivia questions! https://nwvbug.com/Bingo/index.html
 
 ## SpamBot2000
 
 <img src="https://github.com/nwvbug/nwvbug-logos/blob/main/SpamBot/Continuity%20SpamBot.png" width="175" height="175">
 
-SpamBot is a state-of-the-art AI Chatbot that currrently has an interface through Discord. It runs on the Davinci GPT-3 Language Processing Model from OpenAI. It has memory and can reference details from earlier in the conversation. It's personality is customizable through the spaCy prompt-addition system, which was developed by RyCorp.
+SpamBot is a state-of-the-art AI Chatbot that currently has an interface through Discord. It runs on the Davinci GPT-3 Language Processing Model from OpenAI. It has memory and can reference details from earlier in the conversation. It's personality is customizable through the spaCy prompt-addition system, which was developed by RyCorp.
 More details on https://nwvbug.com/projects.html
 
