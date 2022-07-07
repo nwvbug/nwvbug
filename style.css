@@ -176,7 +176,7 @@ body {
 
 .text{
     font-family: "alfarn",sans-serif;
-    opacity: 0;
+    opacity: 1;
 }
 
 #text1 {
@@ -233,6 +233,7 @@ body {
     background-color:#95A1F1;
     font-family: "alfarn",sans-serif;
     margin-top:5%;
+    border:solid;
 
     
       
@@ -240,4 +241,45 @@ body {
 
 .aboutbutton:hover{
     opacity:100%;
+}
+
+/* User testimonials */
+.usertestimonials {
+    text-align: center;
+}
+
+.testimonialcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    text-align:center;
+}
+
+.testimonial {
+    margin: 25px;
+    width: 350px;
+    background-color:#95A1F1;
+    border-radius: 20px;
+}
+
+.testimonial img {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    margin: 25px;
+}
+
+.testimonial .text {
+    padding: 25px;
+}
+
+
+.header1 {
+    /* background-color: orange; */
+    color: #D8DEE9;
+    font-size: 30px;
+    font-family: 'alfarn', sans-serif;
 }
