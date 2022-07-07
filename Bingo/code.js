@@ -7,8 +7,7 @@ arrayLength=0
 triviaQuestions= ""
 var doingTrivia
 triviaInstructions = document.getElementById("triviaChoice")
-textBlock = "";
-// TODO: figure out why textblock is not filling with data
+var customWords;
 
 function instructions(){
     
@@ -20,20 +19,25 @@ function instructions(){
 }
 
 function loadQuestions() {
-    reader.addEventListener('load', function() {
-        textBlock = this.result;
-    })
+    reader.onload = function(e) {
+        var text = reader.result;
+        
+        customWords = text;
+    }
 }
 
-function getRandomQuestion() {
+function getRandomQuestion(textBlock) {
     console.log("random question ran")
     let arrayText = textBlock.split("\n")
-    let random_number = Math.floor(Math.random() * 321);
+    console.log(arrayText)
+    let random_number = Math.floor(Math.random() *arrayText.length);
+    console.log(random_number)
     let random_question = arrayText[random_number];
-    var questionArray= JSON.parse(random_question)
-    console.log((questionArray))
-    return random_question
-        // document.getElementById('file').innerText = this.result; // places text into webpage
+    console.log(random_question)
+    var questionArray = JSON.parse(random_question)
+    console.log(questionArray)
+    return questionArray
+    // document.getElementById('file').innerText = this.result; // places text into webpage
 }
 
 function standard(){
@@ -41,11 +45,24 @@ function standard(){
     doingTrivia = Math.floor(Math.random()*11)
     console.log(doingTrivia)
     if (doTrivia == true && doingTrivia == 1){
-        triviaQuestion = getRandomQuestion()
+        triviaQuestion = getRandomQuestion(customWords)
         console.log(triviaQuestion)
-        
-        document.getElementById("triviaQuestionDisplay").innerHTML = "this is where trivia questions go"
+        document.getElementById("triviaUIchoice").innerHTML="Trivia = On"
+        document.getElementById("triviaQuestionDisplay").innerHTML = triviaQuestion[0]
         document.getElementById("triviaQuestionAnswer").innerHTML = "Click me when you are ready to reveal the answer"
+        document.getElementById("triviaQuestionAnswer").onclick = function() {
+            document.getElementById("triviaQuestionAnswer").innerHTML = triviaQuestion[1]+" [click question to dismiss]"
+        }
+        document.getElementById("triviaQuestionDisplay").onclick = function() {
+            document.getElementById("triviaQuestionDisplay").innerHTML =""
+            document.getElementById("triviaQuestionAnswer").innerHTML = ""
+            doTrivia==true;
+            standard()
+            
+        }
+        
+
+
 
 
         
@@ -447,6 +464,9 @@ function decider(selection){
 
 function logic(){
     console.log("gamemode is" +gamemode)
+    if (doTrivia == true){
+        document.getElementById("triviaUIchoice").innerHTML="Trivia = On"
+    }
     if (gamemode == 1){
         console.log("Logic: Standard")
         standard()
@@ -479,44 +499,49 @@ var reader;
 function triviaTrue(userchoice){
     if (userchoice === true){
         doTrivia = true
-        document.getElementById("triviaChoice").innerHTML=""
-        document.getElementById("triviaYes").innerHTML=""
-        document.getElementById("triviaNo").innerHTML=""
         document.getElementById("triviaUIchoice").innerHTML="Trivia = On"
-        clearToBegin = true
-        selection.style.color = "black";
-        selection2.style.color = "black";
-        selection3.style.color = "black";
-        selection4.style.color = "black";
-        selection5.style.color = "black";
-        selection6.style.color = "black";
-        selection7.style.color="black";
-        document.getElementById("warning").innerHTML=""
-        document.getElementById("triviaChoice").innerHTML="Select the file with the questions and answers."
-        fileInput = document.getElementById("fileInput");
-        fileInput.style.display = "flex";
-        document.getElementById("myBtn").addEventListener("click", function() {
-            
-            // read the file
-            reader = new FileReader();
-            loadQuestions()
-            // reader.readAsText(document.querySelector('input').files[0]);
-            // text = reader.result;
-            // console.log(text)
-            tryIt = document.getElementById("myBtn")
-            tryIt.style.display = "none";
-            fileInput.style.display = "none";
-            
-            triviaInstructions.style.display = "none";
+        var uploadFile = document.createElement('input');
+        uploadFile.type = 'file';
+        uploadFile.id = 'file';
+        uploadFile.name = 'file';
+        uploadFile.accept = '.txt';
+        document.body.appendChild(uploadFile);
+        var uploadButton = document.createElement('button');
+        uploadButton.innerHTML = 'Upload';
+        document.body.appendChild(uploadButton);
 
-            // tokenize the strings
-            // tokenized_answers = text.split('\n');
-            // console.log(tokenized_answers)
-
+        uploadButton.onclick = function() {
+        var file = uploadFile.files[0];
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var text = reader.result;
             
+            customWords = text;
+            console.log( customWords )
+            
+            // var textArea = document.createElement('textarea');
+            // textArea.value = text;
+            // document.body.appendChild(textArea);
+            
+            document.getElementById("triviaChoice").innerHTML=""
+            document.getElementById("triviaYes").innerHTML=""
+            document.getElementById("triviaNo").innerHTML=""
+            document.getElementById("triviaUIchoice").innerHTML="Trivia = On"
+            clearToBegin = true
+            selection.style.color = "black";
+            selection2.style.color = "black";
+            selection3.style.color = "black";
+            selection4.style.color = "black";
+            selection5.style.color = "black";
+            selection6.style.color = "black";
+            selection7.style.color="black"
+            document.getElementById("warning").innerHTML=""
+            uploadFile.style.display="none";
+            uploadButton.style.display="none";
 
-          
-        });
+        };
+        reader.readAsText(file);
+        };
         
     }
     if (userchoice === false){
