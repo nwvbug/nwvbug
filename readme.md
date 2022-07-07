@@ -5,6 +5,8 @@
 
 Go to https://nwvbug.com for the most up-to-date informaton regarding projects.
 
+For information regarding parent company Lye Software or sister company RyCorp, visit their respective sites at https://lye.software and https://rypixel.net
+
 ## Lang: 
 
 <img src="https://github.com/nwvbug/nwvbug-logos/blob/main/Lang%20Logos/RedesLangwBg.png" width="175" height="175">
