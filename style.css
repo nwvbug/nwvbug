@@ -177,7 +177,7 @@ body {
 .text{
     font-family: "alfarn",sans-serif;
     opacity: 1;
-    font-size:3vh;
+    font-size:3.25vh;
 }
 
 #text1 {
@@ -277,10 +277,27 @@ body {
     padding: 25px;
 }
 
+.testimonial .textproj {
+    padding: 25px;
+}
 
 .header1 {
     /* background-color: orange; */
     color: #D8DEE9;
     font-size: 30px;
     font-family: 'alfarn', sans-serif;
+}
+
+
+.largetext{
+    font-family: "alfarn",sans-serif;
+    opacity: 1;
+    font-size:4vh;
+    line-height:1.25;
+}
+
+.textproj{
+    font-family: "alfarn",sans-serif;
+    opacity: 1;
+    font-size:2.25vh;
 }
