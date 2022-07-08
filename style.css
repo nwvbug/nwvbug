@@ -177,6 +177,7 @@ body {
 .text{
     font-family: "alfarn",sans-serif;
     opacity: 1;
+    font-size:3vh;
 }
 
 #text1 {
@@ -224,7 +225,7 @@ body {
 
 
 .aboutbutton{
-    
+    font-size:2vh;
     width:10vw;
     height:10vh;
     padding:15px;
