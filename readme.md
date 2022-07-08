@@ -26,5 +26,5 @@ Play a world-class game of Bingo with our state of the art bingo caller. The fun
 <img src="https://github.com/nwvbug/nwvbug-logos/blob/main/SpamBot/Continuity%20SpamBot.png" width="175" height="175">
 
 SpamBot is a state-of-the-art AI Chatbot that currently has an interface through Discord. It runs on the Davinci GPT-3 Language Processing Model from OpenAI. It has memory and can reference details from earlier in the conversation. It's personality is customizable through the spaCy prompt-addition system, which was developed by RyCorp.
-More details on https://nwvbug.com/projects.html
+More details on https://nwvbug.com/spambot.html
 
