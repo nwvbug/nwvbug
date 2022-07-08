@@ -50,4 +50,14 @@ function onLoad() {
 
 }
 
+function showSBinfo(m){
+    if(m == "prompt"){
+        document.getElementById("extra1").innerHTML = "The prompt for SpamBot has been intricately designed to acheive maximum performance. Personalities can be added to SpamBot using RyCorp's proprietary prompt addition system, running on the spaCy AI engine."
+    }
+    else if(m=="mem"){
+        document.getElementById("extra2").innerHTML = "SpamBot's memory system can be customized to determine how long it remembers details from conversations. These memories are re-integrated back into the prompt, allowing the SpamBot to have consistent opinions and beliefs."
+        
+    }
+}
+
 
