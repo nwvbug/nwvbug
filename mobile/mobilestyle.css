@@ -36,7 +36,7 @@ body {
 
 .samelineheader{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 
@@ -224,7 +224,7 @@ body {
 
 
 .aboutbutton{
-    font-size:2vh;
+    font-size:1.5vh;
     width:20vw;
     height:10vh;
     padding:15px;
@@ -265,7 +265,7 @@ body {
     border-radius: 20px;
     text-align:center;
     align-items: center;
-    margin-left:22%
+    margin-left:15%
 }
 
 .testimonial img {
@@ -305,12 +305,12 @@ body {
 }
 
 .smallbutton{
-    width:10vw;
+    width:20vw;
     height:10vh;
     margin-top:5%;
     border-radius:15px;
     font-family: "alfarn",sans-serif;
-    font-size:1vh;
+    font-size:2vh;
     background-color:#95A1F1;
     border:none;
 
