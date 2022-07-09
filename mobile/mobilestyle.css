@@ -33,8 +33,8 @@ body {
     margin:0;
     text-align:center;
     overflow-x:hidden;
-    max-width:100%;
-    width:100%;
+    max-width:100vw;
+    width:100vw;
 }
 
 
@@ -80,11 +80,10 @@ body {
 
 .foot{
     text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
+    
     box-sizing: border-box;
     color: white;
-    width: 100%;
+    width: 100vw;
     bottom: 0%;
     position: fixed;
     
@@ -116,8 +115,8 @@ body {
 }
 
 .image{
-    height:20vh;
-    width:auto;
+    
+    width:90vw;
     
 }
 
@@ -259,13 +258,14 @@ body {
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-    width:100%;
+    width:100vw;
     text-align:center;
+    
 }
 
 .testimonial {
     margin: 25px;
-    width: 350px;
+    width:90vw;
     background-color:#95A1F1;
     border-radius: 20px;
     text-align:center;
@@ -273,7 +273,7 @@ body {
 }
 
 .testimonial img {
-    width: 300px;
+    width: 75vw;
     height: auto;
     border-radius: 20px;
     margin: 25px;
