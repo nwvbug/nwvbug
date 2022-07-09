@@ -10,39 +10,29 @@
     
 </head>
 <body onload = "execute()" class="homepage">
-    <div class="samelineheader">
-        <img onclick = "window.location.href = '../index.html'" src="back to homepage.png" style="width:7vw; height:7vw; border-radius:15px;">
+    <div class="medbox">
 
-        <img src="transparenticon.png" class="topleftlogoicon" onclick="window.location.href='index.html'">
+        <img src="transparenticon.png" class="topleftlogoicon" style = 'height:10vh; width:auto;' onclick="window.location.href='index.html'">
         
-        <h1 class="header">Welcome to Lang, the Customizable Verb Study Tool!</h1>
-        
-    </div>
-    <h2 style = "margin-left:61%; margin-top:-2%;"class="header">Please select your language or use a custom sheet.</h2>
 
+        <div class="dropdown">
+            <button class="dropbtn">French</button>
+            <div class="dropdown-content">
+              <a class = "smallselection" href="frenchPresent.html">Present Tense</a>
+              <a class = "smallselection" href="frenchPast.html">Past Tense- Passe Composée</a>
+              <a class = "smallselection" href="frenchCondt.html">Future Tense- Conditionnel</a>
+              <a class = "smallselection" href="showVerbList.html">See verb list- all tenses</a>
+              
+            </div>
+          </div>
     
-
-    <div class="sameline">
-        <div id="cringediv">
-            <div class="dropdown">
-                <button class="dropbtn">French</button>
-                <div class="dropdown-content">
-                  <a class = "smallselection" href="frenchPresent.html">Present Tense</a>
-                  <a class = "smallselection" href="frenchPast.html">Past Tense- Passe Composée</a>
-                  <a class = "smallselection" href="frenchCondt.html">Future Tense- Conditionnel</a>
-                  <a class = "smallselection" href="showVerbList.html">See verb list- all tenses</a>
-                  
-                </div>
-              </div>
-        </div>
-        
         <div>
             <div class="dropdown">
                 <button class="dropbtn">Spanish</button>
                 <div class="dropdown-content">
-                  <a href="#" class = "smallselection" >Coming Soon!</a>
-                  <a href="createCustom.html" class = "smallselection" >Use Custom Sheets to Study Spanish</a>
-                  
+                <a href="#" class = "smallselection" >Coming Soon!</a>
+                <a href="createCustom.html" class = "smallselection" >Use Custom Sheets to Study Spanish</a>
+                
                 </div>
             </div>
             
@@ -52,9 +42,9 @@
             <div class="dropdown">
                 <button class="dropbtn">Custom</button>
                 <div class="dropdown-content">
-                  <a href="createCustom.html" class = "smallselection" >Create Custom Verb Sheet</a>
-                  <a href="readCustom.html" class = "smallselection" >Read & Study Custom Verb Sheet</a>
-                  
+                <a href="createCustom.html" class = "smallselection" >Create Custom Verb Sheet</a>
+                <a href="readCustom.html" class = "smallselection" >Read & Study Custom Verb Sheet</a>
+                
                 </div>
             </div>
             
@@ -64,8 +54,8 @@
             <div class="dropdown">
                 <button class="dropbtn">Extras</button>
                 <div class="dropdown-content">
-                  <a href="flashcards.html" class = "smallselection" >Flashcards (Custom Sheet Required)   </a>
-                  
+                <a href="flashcards.html" class = "smallselection" >Flashcards (Custom Sheet Required)   </a>
+                
                 </div>
             </div>
             
@@ -78,9 +68,55 @@
             </div>
             
         </div>
-        
-    </div>
+            
+        </div>
 
+        <div class="largebox">
+                <div class="medbox">
+                    <img src="../RedesLangwBg.png" class="nwvbuglogo">
+                    <div class="infodiv">
+                        <p class="welcometext">Welcome to Lang, the Customizable Verb Study Program!</p>
+                        
+                        <p class="welcometext">Please Select Your Language, or Use a Custom Verb Study Sheet.</p>
+                    </div>
+                    <div class="infodiv">
+                        <p class="welcometext">We offer French built into Lang, or you can use Lang Studysheets to study any language.</p>
+                        
+                        <p class="welcometext">The User Interface & some Study Algorithm functions are customizable in Settings.</p>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="medbox">
+                    <img src="nwvbugpurple.png" class="nwvbuglogo">
+                    <div class="infodiv" style="background-color:#95A1F1">
+                        <h1 class="welcometext"w>Return to NWVBUG Development Homepage and discover new & exciting projects</h1>
+                        <button class="newbutton" onclick="window.location.href='../index.html'">Return</button>
+                    </div>
+                </div>
+                <div class="medbox">
+                    <div class="infodiv" style="background-color:#3e8e41">
+                        <h1 class="welcometext">See featured Lang Studysheets made by others in the Lang community</h1>
+                        <button class="newbutton" style="font-size:1.5vw;">Go to Featured</button>
+                    </div>
+
+                    <div class="infodiv" style="background-color:#3e8e41">
+                        <h1 class="welcometext">Have Suggestions for Lang? Leave your ideas here!</h1>
+                        <button class="newbutton" onclick="window.location.href='https://github.com/nwvbug/nwvbug/issues/new'" style="font-size:1.5vw;">Go to Suggestions</button>
+                    </div>
+
+                    <div class="infodiv" style="background-color:#3e8e41">
+                        <h1 class="welcometext">Encountered a bug? Read the FAQ or post an Issue here:</h1>
+                        <button class="newbutton" onclick="window.location.href='https://github.com/nwvbug/Lang/wiki/Home-&-FAQ'" style="font-size:1.5vw;">Go to FAQ</button>
+                        <br>
+                        <br>
+                        <button class="newbutton" onclick="window.location.href='https://github.com/nwvbug/nwvbug/issues/new'" style="font-size:1.5vw;">Go to Issues</button>
+                    </div>
+                </div>
+        </div>
+
+   
 
     <footer id = "feet" class="foot">
         <p  id = "copyright" class="copyrighttext">Copyright NWVBUG Development, 2022. <a href="https://github.com/nwvbug/nwvbug">GitHub Repo & Source</a></p>
