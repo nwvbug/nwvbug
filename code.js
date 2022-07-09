@@ -38,8 +38,9 @@ function onLoad() {
     var aspectRatio = x / y;
     // if the screen is vertical (taller than wide) make the website empty
     if (aspectRatio < 1) {
-        alert("Please use a horizontal screen");
-        location.replace("https://github.com/nwvbug")
+        window.location.href='mobile/index.html'
+        
+        
     }
 
     document.getElementById("myvideo").play()
