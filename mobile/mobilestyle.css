@@ -224,7 +224,7 @@ body {
 
 
 .aboutbutton{
-    font-size:1.5vh;
+    font-size:1.25vh;
     width:20vw;
     height:10vh;
     padding:15px;
@@ -235,7 +235,7 @@ body {
     border:solid;
     margin-bottom: 5%;
     /* damn you github */
-    
+
     
       
 }
@@ -311,7 +311,7 @@ body {
     margin-top:5%;
     border-radius:15px;
     font-family: "alfarn",sans-serif;
-    font-size:2vh;
+    font-size:1.5vh;
     background-color:#95A1F1;
     border:none;
 
