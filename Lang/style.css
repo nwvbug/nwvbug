@@ -58,7 +58,7 @@
     font-size: 2vw;
     border: none;
     font-family:'Varela Round';
-    
+    min-width:70px;
   
     border:5px;
     border-color: #001945;
@@ -76,6 +76,7 @@
     border:5px;
     border-color: #001945;
     border-radius: 15px;
+    min-width:70px;
   }
   
   /* Dropdown Content (Hidden by Default) */
@@ -248,7 +249,8 @@
     border-color: #001945;
     border-radius: 15px;
     
-    font-size: 250%;
+    width:10vw;
+    font-size:1.25vw;
     display:flex;
     justify-content:center;
     align-items: center;
@@ -273,12 +275,13 @@
   
   display:flex;
   flex:1;
-  margin-top:-5%;
+  flex-wrap: wrap;
 
 }
 
 .flexitem{
     flex:1;
+    min-width:230px;
 }
 
 
@@ -290,18 +293,22 @@
 
 
 .infodiv{
-  background-color:wheat; height:20vw; width:20vw; border-radius:20px;
+  background-color:wheat; 
+  height:20vw; 
+  width:20vw; 
+  border-radius:20px;
   text-align:center;
   align-items: center;
   justify-content:center;
   font-family:'Varela Round';
   font-size:1.5vw;
+  min-width:250px;
   
 }
 
 .welcometext{
   font-family:'Varela Round';
-  font-size:1.5vw;
+  font-size:1.25vw;
   padding:10px;
   padding-bottom:25px;
   color:#001945;
@@ -310,7 +317,7 @@
 
 .newbutton{
   width:13vw;
-  height:8vh;
+  height:4vw;
   border:none;
   border-radius:15px;
   background-color:#001945;
@@ -339,8 +346,8 @@
 }
 
 .topleftlogoicon{
-    width:7vw;
-    height:auto;
+    height:10vh;
+    width:auto;
     
 }
 
@@ -485,6 +492,7 @@
   padding: 2.5vw;
   background-color: #001945;
   border-radius: 40px;
+  flex-wrap:wrap;
 }
 
 .medbox{
@@ -493,4 +501,5 @@
   justify-content: space-around;
   align-items:center;
   padding:20px;
+  flex-wrap:wrap;
 }
