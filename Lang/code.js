@@ -330,7 +330,7 @@ function doCustomSheets(v){
     buttonStyling = document.getElementById("goButton")
     buttonStyling.style.display = "flex";
     buttonStyling.innerHTML = ">" + "\n" + "Go!"
-    document.getElementById("stats").style.width = "70"
+    document.getElementById("stats").style.width = "15vw"
     document.getElementById("stats").style.height = "110"
     document.getElementById("crctst").style.fontSize = "15"
     document.getElementById("incorrect").style.fontSize = "15"
@@ -430,7 +430,7 @@ function selectWord(language) {
         buttonStyling = document.getElementById("goButton")
         buttonStyling.style.display = "flex";
         buttonStyling.innerHTML = ">" + "\n" + "Go!"
-        document.getElementById("stats").style.width = "70"
+        document.getElementById("stats").style.width = "15vw"
         document.getElementById("stats").style.height = "110"
         document.getElementById("crctst").style.fontSize = "15"
         document.getElementById("incorrect").style.fontSize = "15"
@@ -448,7 +448,7 @@ function selectWord(language) {
         return toReturn
     }
     else if (language == "condt") {
-        document.getElementById("stats").style.width = "70"
+        document.getElementById("stats").style.width = "15vw"
         document.getElementById("stats").style.height = "110"
         document.getElementById("crctst").style.fontSize = "15"
         document.getElementById("incorrect").style.fontSize = "15"
@@ -463,7 +463,7 @@ function selectWord(language) {
         document.getElementById("displayWord").innerHTML = "What is the conditional stem of " + word
     }
     else if (language == "pc") {
-        document.getElementById("stats").style.width = "70"
+        document.getElementById("stats").style.width = "15vw"
         document.getElementById("stats").style.height = "110"
         document.getElementById("crctst").style.fontSize = "15"
         document.getElementById("incorrect").style.fontSize = "15"

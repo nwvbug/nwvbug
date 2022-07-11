@@ -39,6 +39,8 @@
 .sameline{
     display: flex;
     justify-content: space-evenly;
+    flex-wrap:wrap;
+    padding:15px;
 }
 
 .smallselection{
@@ -55,10 +57,11 @@
     background-color: #001945;
     color: white;
     padding: 16px;
-    font-size: 2vw;
+    font-size: 2vh;
+    font-size-adjust:initial;
     border: none;
     font-family:'Varela Round';
-    min-width:70px;
+    min-width:200px;
   
     border:5px;
     border-color: #001945;
@@ -145,19 +148,19 @@
     display:flex;
     justify-content:center;
     width:100%;
+    flex-wrap:wrap;
 }
 
-.input{
-    border:5px;
-    border-color: #001945;
-    border-radius: 15px;
-    width:500px;
-    height:150px;
-    font-size:500%;
-    font-family: 'Varela Round';
-    color:#001945;
-    display:none;
-        
+.input {
+  border: 5px;
+  border-color: #001945;
+  border-radius: 15px;
+  width: 50vw;
+  height: 150px;
+  font-size: 500%;
+  font-family: 'Varela Round';
+  color: #001945;
+  display: none;
 }
 
 
@@ -168,20 +171,20 @@
     color:#001945;
 }
 
-.goButton{
-    border:5px;
-    border-color: #001945;
-    border-radius: 15px;
-    width:100px;
-    height:150px;
-    font-size: 250%;
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    font-family: 'Varela Round';
-    color:#001945;
-    display:none;
-    margin-left:15px;
+.goButton {
+  border: 5px;
+  border-color: #001945;
+  border-radius: 15px;
+  width: 15vw;
+  height: 150px;
+  font-size: 250%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Varela Round';
+  color: #001945;
+  display: none;
+  margin-left: 15px;
 }
 
 .showCorrect{
@@ -269,6 +272,7 @@
 .flexbox{
     display:flex;
     flex:1;
+    flex-wrap:wrap;
 }
 
 .flexboxset{
@@ -282,6 +286,7 @@
 .flexitem{
     flex:1;
     min-width:230px;
+    margin-bottom:20%;
 }
 
 
@@ -289,6 +294,8 @@
   width:20vw;
   height:20vw;
   border-radius:20px;
+  min-width: 200px;
+  min-height:200px;
 }
 
 
@@ -307,24 +314,25 @@
 }
 
 .welcometext{
-  font-family:'Varela Round';
-  font-size:1.25vw;
-  padding:10px;
-  padding-bottom:25px;
-  color:#001945;
-  font-weight:900;
+  font-family: 'Varela Round';
+  font-size: 1.25vw;
+  padding: 10px;
+  padding-bottom: 0px;
+  color: #001945;
+  font-weight: 900;
 }
 
-.newbutton{
-  width:13vw;
-  height:4vw;
-  border:none;
-  border-radius:15px;
-  background-color:#001945;
-  color:wheat;
-  font-family:'varela round';
-  font-size:2vw;
-  
+.newbutton {
+  width: 13vw;
+  height: 4vw;
+  border: none;
+  border-radius: 15px;
+  background-color: #001945;
+  color: wheat;
+  font-family: 'varela round';
+  font-size: 2vw;
+  min-width: 80px;
+  min-height: 20px;
 }
 
 
@@ -338,7 +346,7 @@
     box-sizing: border-box;
     background-color: #3e8e41;
     color: white;
-    width: 100%;
+    width: 101%;
     bottom: 0%;
     position: fixed;
     transform:translateX(-20px);
@@ -428,7 +436,6 @@
   width: 300px;
   height: 200px;
   border: 1px solid #f1f1f1;
-  margin-left: 40%;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
   border-radius: 15px;
 
