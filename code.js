@@ -1,4 +1,4 @@
-function doAnimation(editclass, text){
+function doAnimation(editclass, text, div, num){
     console.log()
     toEdit = document.getElementById(editclass)
     toEdit.classList.remove('show')
@@ -6,10 +6,17 @@ function doAnimation(editclass, text){
     textObj = document.getElementById(text)
     textObj.classList.remove("hide")
     textObj.classList.add("show")
+    if(num == 1){
+        document.getElementById(div).style.backgroundColor = 'wheat';
+    }else{
+        document.getElementById(div).style.backgroundColor = '#66a3bb';
+
+    }
+    textObj.style.display='';
     // toEdit.style.display = "none";
 }
 
-function doAnimationButUndo(editclass, text){
+function doAnimationButUndo(editclass, text, div, num){
     console.log()
     toEdit = document.getElementById(editclass)
     toEdit.classList.remove('hide')
@@ -20,6 +27,13 @@ function doAnimationButUndo(editclass, text){
     textObj.classList.remove("show")
     textObj.classList.add("hide")
     // toEdit.style.display = "block";
+    if(num == 1){
+        document.getElementById(div).style.backgroundColor = '#66a3bb';
+    }else{
+        document.getElementById(div).style.backgroundColor = 'wheat';
+
+    }
+    textObj.style.display='none';
 } 
 
 
