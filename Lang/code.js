@@ -237,9 +237,11 @@ function onBtnPress(v) {
         customWords = text;
         console.log( customWords )
         if(v=="f"){
+            uploadButton.style.display="none";
             doFlashcards();
         }
         else{
+            uploadButton.style.display="none";
             doCustomSheets(v);
         }
         uploadButton.style.display="none";
