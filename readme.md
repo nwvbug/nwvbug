@@ -11,7 +11,7 @@ For information regarding parent company Lye Software or sister company RyCorp, 
 
 <img src="https://github.com/nwvbug/nwvbug-logos/blob/main/Lang%20Logos/RedesLangwBg.png" width="175" height="175">
 
-Tired of old, ad-filled, and boring study sessions? Lang is the site for you! Lang features built in French verbs, and allows you to make your own lists to study whatever language you want. Review with flashcards, build memory with the writing mode, or take a practice test and be ready to get the A+. All of this and more, completely free and with no ads.
+Tired of old, ad-filled, and boring study sessions? Lang is the site for you! Lang features built in French verbs, and allows you to make your own lists to study whatever language you want. Review with flashcards, build memory with the writing mode, or take a practice test and be ready to get the A+. All of this and more, completely free and with no ads. Lang supports Quizlet Study Sets as well, giving it a huge library of pre-existing sets to pull from.
 https://nwvbug.com/Lang/index.html
 
 ## NWVBUG's Bingo:
