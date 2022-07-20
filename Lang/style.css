@@ -124,6 +124,12 @@
     .dropbtn:hover {
         background-color: #3e8e41;
         transition: 2ms;
+        
+      }
+
+      .dropbtnmain:hover {
+        background-color: #3e8e41;
+        transition: 2ms;
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
       }

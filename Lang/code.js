@@ -896,7 +896,7 @@ function startCreator(version){
     if (version=="single"){
         console.log("start creator")
         document.getElementById("answerInput").style.display = "";
-        document.getElementById("promptInput").placeholder = "Put Infinitive Here";
+        document.getElementById("promptInput").placeholder = "Put Term / Question Here";
         document.getElementById("promptInput").style.display="";
         document.getElementById("answerInput").placeholder = "Put Answer Here";
         document.getElementById("addnew").style.display = "";
@@ -969,7 +969,7 @@ function makeInputs(version){
         verbInput.setAttribute("type", "text");
         verbInput.setAttribute("id",id1)
         generateIdV++
-        verbInput.placeholder="Put Infinitive Here";
+        verbInput.placeholder="Put Term / Question Here";
         document.getElementById("minicreator").appendChild(verbInput);
     
         var answerInput = document.createElement("INPUT");
