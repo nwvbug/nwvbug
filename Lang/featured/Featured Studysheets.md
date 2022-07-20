@@ -2,6 +2,7 @@ Lang's Custom Studysheet system is very useful, but what if you don't want to ma
 
 Featured Studysheets can be found in this folder, and are typically popular Studysheets that have been verified to not have any errors. 
 
-To return to Lang, click here: <a href='https://nwvbug.com/Lang'>
+To return to Lang, click <a href='https://nwvbug.com/Lang'> here.
+
   <br>
-To go back to the Studysheets, click here: <a href='https://github.com/nwvbug/nwvbug/tree/main/Lang/featured'>
+To go back to the Studysheets, click <a href='https://github.com/nwvbug/nwvbug/tree/main/Lang/featured'> here.
