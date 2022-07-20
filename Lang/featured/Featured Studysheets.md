@@ -5,4 +5,4 @@ Featured Studysheets can be found in this folder, and are typically popular Stud
 <p>To return to Lang, click <a href='https://nwvbug.com/Lang'> here.</p>
 
   <br>
-To go back to the Studysheets, click <a href='https://github.com/nwvbug/nwvbug/tree/main/Lang/featured'> here.
+<p>To go back to the Studysheets, click <a href='https://github.com/nwvbug/nwvbug/tree/main/Lang/featured'> here.</p>
