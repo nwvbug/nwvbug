@@ -20,7 +20,12 @@
             <textarea class="largeinputbox" id="quizletinput"></textarea>
             <br>
             <br>
-            <button class="returnbutton" style="width:28vw; height:10vh;" onclick="downloadQuizlet()">Save & Download</button>
+            <div style="display:flex; flex-direction: row;">
+                <button class="returnbutton" style="width:20vw; height:10vh;" onclick="downloadQuizlet(true)">Save & Download</button>
+                <button class="returnbutton" style="width:15vw; height:10vh;" onclick="downloadQuizlet(false)">Download with swapped terms and definitions</button>
+            </div>
+            
+
 
             
 
@@ -58,6 +63,7 @@
     <footer id = "feet" class="foot">
         <div class="samelineheader">
             <p  id = "copyright" class="copyrighttext">Copyright NWVBUG Development, 2022. <a href="https://github.com/nwvbug/nwvbug">GitHub Repo & Source</a></p>
+            <button class="returnbutton" onclick="reload()">Reset Page</button>
             <button id="return" class = "returnbutton" onclick="returnMain()">Exit</button>
         </div>
     </footer>

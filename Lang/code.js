@@ -1158,49 +1158,47 @@ function save(data) {
 
 
 //converting quizlet study set into lang studysheet
-function downloadQuizlet(){
-    // var downloadArray = ""
-    //     var childarray = []
-    //     var children = minicreator.children;
-    //     for(var i=0; i<children.length; i++){
-    //         var childx = children[i];
-    //         if (childx.tagName.toLowerCase() === 'input'){
-    //             childarray.push(childx);
-    //         }
-    
-    //     }
-    //     console.log(childarray);
-    //     for (var i=0; i<childarray.length; i+=2){
-    //         var child = childarray[i];
-    //         value1 = '["'+child.value+'"';
-    //         var child2 = childarray[i+1];
-    //         value2 = '"'+child2.value+'"]'+"\n";
-    //         toAdd = [value1, value2];
-    //         console.log(toAdd);
-    //         downloadArray = downloadArray + toAdd;
-    //         console.log(downloadArray);
-    //     }
-        // downloadArray = downloadArray.slice(0,-1);
-        // save(downloadArray);
-    let input = document.getElementById('quizletinput').value;
-    newData = input.split("\n")
-    console.log(newData)
-    toDownload = ""
-    for(var i=0;i<newData.length; i+=1){
-        newSplit = newData[i].split(",");
-        console.log(newSplit)
-        value1 = '["'+newSplit[0]+'"';
-        value2 = '"'+newSplit[1]+'"]'+"\n";
-        toAdd = [value1, value2];
-        console.log(toAdd);
-        
-        toDownload = toDownload + toAdd
+function downloadQuizlet(check){
+    if(check == true){
+        let input = document.getElementById('quizletinput').value;
+        newData = input.split("\n")
+        console.log(newData)
+        toDownload = ""
+        for(var i=0;i<newData.length; i+=1){
+            newSplit = newData[i].split(",");
+            console.log(newSplit)
+            value1 = '["'+newSplit[0]+'"';
+            value2 = '"'+newSplit[1]+'"]'+"\n";
+            toAdd = [value1, value2];
+            console.log(toAdd);
+            
+            toDownload = toDownload + toAdd
+        }
+        console.log(toDownload);
+        save(toDownload);
     }
-    console.log(toDownload);
-    save(toDownload);
+    else{
+        let input = document.getElementById('quizletinput').value;
+        newData = input.split("\n")
+        console.log(newData)
+        toDownload = ""
+        for(var i=0;i<newData.length; i+=1){
+            newSplit = newData[i].split(",");
+            console.log(newSplit)
+            value1 = '["'+newSplit[1]+'"';
+            value2 = '"'+newSplit[0]+'"]'+"\n";
+            toAdd = [value1, value2];
+            console.log(toAdd);
+            
+            toDownload = toDownload + toAdd
+        }
+        console.log(toDownload);
+        save(toDownload);
+    }
+    
 }
 
-//function to reset the custom sheet creator
+//function to reset the custom sheet creator & other places you can enter text
 
 function reload(){
     if (confirm("Any data you entered may not be saved. Press 'OK' to continue or 'Cancel' to go back.") == true){
