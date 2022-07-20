@@ -163,6 +163,18 @@
   display: none;
 }
 
+.largeinputbox {
+  border: 5px;
+  border-color: #001945;
+  border-radius: 15px;
+  width: 30vw;
+  height: 50vh;
+  
+  font-family: 'Varela Round';
+  color: #001945;
+ 
+}
+
 
 
 
