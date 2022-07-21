@@ -292,6 +292,25 @@
     flex:1;
     flex-wrap:wrap;
 }
+.flexbox2{
+  display:flex;
+  height:60vh;
+  flex-wrap:wrap;
+  flex-direction: row;
+  
+}
+
+.flexitem2{
+  align-items:center; 
+  text-align:center; 
+  justify-content:space-around; 
+  padding:10%; 
+  padding-top:0%;
+  padding-bottom:0%;
+  flex:1;
+  min-width:230px;
+  margin-bottom:20%;
+}
 
 .flexboxset{
   
@@ -368,6 +387,7 @@
     bottom: 0%;
     position: fixed;
     transform:translateX(-20px);
+    margin-top:15px;
     
 }
 
@@ -516,6 +536,17 @@
   margin: 2.5vw;
   padding: 2.5vw;
   background-color: #001945;
+  border-radius: 40px;
+  flex-wrap:wrap;
+}
+
+.largeboxclr{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  margin: 2.5vw;
+  padding: 2.5vw;
   border-radius: 40px;
   flex-wrap:wrap;
 }
