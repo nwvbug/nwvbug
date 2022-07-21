@@ -71,6 +71,25 @@
     color: wheat;
    
   }
+
+  .dropbtn2 {
+    background-color: #001945;
+    color: white;
+    padding: 16px;
+    font-size: 2vh;
+    font-size-adjust:initial;
+    border: none;
+    font-family:'Varela Round';
+    min-width:200px;
+  
+    border:5px;
+    border-color: #001945;
+    border-radius: 15px;
+    width:10vw;
+    height:10vh;
+    color: wheat;
+   
+  }
   
   /* The container <div> - needed to position the dropdown content */
   .dropdown {
@@ -134,7 +153,11 @@
         border-bottom-right-radius: 0px;
       }
 
-  
+      .dropbtn2:hover {
+        background-color: #3e8e41;
+        transition: 2ms;
+        
+      }
 
   .smallbutton{
     border:5px;
@@ -294,9 +317,10 @@
 }
 .flexbox2{
   display:flex;
-  height:60vh;
+  height:45vh;
   flex-wrap:wrap;
   flex-direction: row;
+  margin:15px;
   
 }
 
