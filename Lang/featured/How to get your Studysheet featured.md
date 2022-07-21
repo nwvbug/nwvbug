@@ -26,7 +26,7 @@ The NWVBUG Lang team will review your Studysheet in the coming days. Please be p
 
 We reserve the right to deny any Studysheet from being featured for any reason. 
 
-You will NOT be notified if your Studysheet is accepted or denied. If you want to know if it is posted, Watch <a href=""https://github.com/nwvbug/nwvbug>this</a> GitHub repository. 
+You will NOT be notified if your Studysheet is accepted or denied. If you want to know if it is posted, Watch <a href='https://github.com/nwvbug/nwvbug/'> here.</a> GitHub repository. 
 
 
 <img src="https://github.com/nwvbug/nwvbug-logos/blob/main/Lang%20Logos/RedesLangwBg.png" width="175" height="175">
