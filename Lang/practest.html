@@ -9,9 +9,21 @@
     <script src="code.js"></script> 
 </head>
 <body onload = "checkSettings()" class="homepage">
-    <img src="transparenticon.png" class="topleftlogoicon" style = 'height:10vh; width:auto; min-height:150px;' onclick="window.location.href='index.html'">
-    <h1 class="header">Thank you for showing interest in Lang & the new Practice Test feature. Unfortunately, development on this feature is not currently complete. Please feel free to use and enjoy other features of Lang in the mean time, and check back later for when the feature has finished development.</h1>
-    <p class="header">You can watch <a href="https://github.com/nwvbug/nwvbug">this</a> GitHub repository if you want to be notified of new changes.</p> 
+    <div class="samelineheader">
+        <img src="transparenticon.png" class="topleftlogoicon" onclick="window.location.href='index.html'">
+        <h1 class="header">Practice Test- Single Term/Def</h1>
+        <button class="dropbtn" id="myBtnBegin" onclick="onBtnPress('prac')">Begin</button>
+    </div>
+    
+    
+    <pre id="output"></pre>
+    <div id="minicreator" class="testholder">
+
+    </div>
+
+
+
+
     <footer id = "feet" class="foot">
         <div class="samelineheader">
             <p  id = "copyright" class="copyrighttext">Copyright NWVBUG Development, 2022. <a href="https://github.com/nwvbug/nwvbug">GitHub Repo & Source</a></p>

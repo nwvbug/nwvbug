@@ -45,6 +45,7 @@ var generateIdVous = 0
 var generateIdThem = 0
 var whatQuestion = 0
 var whatPro = 1;
+var testLength = 0;
 
 //onload multiple functions
 function execute(){
@@ -239,6 +240,10 @@ function onBtnPress(v) {
         if(v=="f"){
             uploadButton.style.display="none";
             doFlashcards();
+        }else if(v=='prac'){
+            uploadButton.style.display="none";
+
+            doPracticeTest()
         }
         else{
             uploadButton.style.display="none";
@@ -351,9 +356,98 @@ function doCustomSheets(v){
     }
     
 
+function doPracticeTest(){
+    document.getElementById("myBtnBegin").style.display = "none";
+    document.getElementById("file").style.display = "none";
+
+    console.log("this is what customwords is "+customWords)
+    console.log("random question ran")
+    let arrayText = customWords.split("\n")
+    var button = document.createElement("BUTTON")
+    testLength = arrayText.length;
+    for(i=0; i<=arrayText.length; i++){
+        try {
+            var questionText = document.createElement('h1')
+            questionText.className="header";
+            let random_question = arrayText[i];
+            var questionArray = JSON.parse(random_question)
+            questionText.innerHTML=questionArray[0];
+
+            id = "answerInput"+generateIdA
+            var verbInput = document.createElement('INPUT');
+            verbInput.className="inputSeen"
+            verbInput.setAttribute("type", "text");
+            verbInput.setAttribute("id",id)
+            generateIdA++
+            verbInput.placeholder="Answer";
+            document.getElementById("minicreator").appendChild(questionText);
+            document.getElementById("minicreator").appendChild(verbInput);
+        } catch (error) {
+            break;
+        }
+    }
+    var br = document.createElement("br")
+    document.getElementById("minicreator").appendChild(br);
+    var br = document.createElement("br")
+    document.getElementById("minicreator").appendChild(br);
+    button.className = "dropbtn"
+    button.innerHTML= "Submit"
+    button.onclick = function(){
+        let arrayText = customWords.split("\n")
+        for(i=0; i<testLength;i++){
+            let random_question = arrayText[i];
+            var questionArray = JSON.parse(random_question)
+            let id = "answerInput"+i
+            if (document.getElementById(id).value == questionArray[1]){
+                document.getElementById(id).style.backgroundColor="green";
+            }else{
+                document.getElementById(id).style.backgroundColor="red";
+            }
+    
+        }
+        sussy = document.createElement("button")
+        sussy.onclick = function(){
+            if (confirm("Any data you entered may not be saved. Press 'OK' to continue or 'Cancel' to go back.") == true){
+                window.location.reload();
+            }
+            else{
+                
+            }
+        }
+        var br = document.createElement("br")
+        document.getElementById("minicreator").appendChild(br);
+        var br = document.createElement("br")
+        document.getElementById("minicreator").appendChild(br);
+        sussy.innerHTML = "Reset"
+        sussy.className="dropbtn2"
+        document.getElementById("minicreator").appendChild(sussy);
+    }
+    
+    document.getElementById("minicreator").appendChild(button);
+    
+    
 
 
 
+    // console.log("arrtext= "+arrayText)
+    
+        
+    // let random_number = Math.floor(Math.random() *arrayText.length);
+    // console.log(random_number)
+    // let random_question = arrayText[random_number];
+    // console.log(random_question)
+    // var questionArray = JSON.parse(random_question)
+    // console.log(questionArray)
+    // return questionArray
+    
+}
+
+
+function checkTest(){
+    
+
+    
+}
 
 
 
