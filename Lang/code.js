@@ -79,6 +79,51 @@ function callmultiple(){
     
 }
 
+function uploadFiles(){
+    
+
+    var uploadFile = document.createElement('input');
+    uploadFile.type = 'file';
+    uploadFile.id = 'file';
+    uploadFile.name = 'file';
+    uploadFile.accept = '.txt';
+    document.body.appendChild(uploadFile);
+    var uploadButton = document.createElement('button');
+    uploadButton.innerHTML = 'Upload';
+    uploadButton.onclick = function() {
+        console.log("clicked lol")
+        var file = document.getElementById('file').files[0];
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            console.log("reading lol")
+            var text = reader.result;
+            var filename = file.name;
+            var url = "https://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/upload/"+filename;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url);
+
+            xhr.setRequestHeader("Content-Type", "text/plain");
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    console.log(xhr.status);
+                    console.log(xhr.responseText);
+                }
+            };
+            var data = text;
+            console.log("sending " + data + " to " + url);
+            xhr.send(data);
+            
+            // var textArea = document.createElement('textarea');
+            // textArea.value = text;
+            // document.body.appendChild(textArea);
+        };
+        reader.readAsText(file);
+    }
+    document.body.appendChild(uploadButton);
+    
+}
 
 function httpGet(theUrl)
 {
@@ -120,6 +165,30 @@ function getLibrary(){
                 console.log("link is: "+link)
                 window.location.href=link
             }
+
+            var libutton = document.createElement('button')
+            libutton.className="deletebutton";
+            text =library[i]
+            libutton.innerHTML = "Delete "+text
+            link = "https://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+text+"/delete"
+            
+            console.log(link)
+            id = "library"+generateIdA
+            generateIdA++
+            libutton.id = id;
+            // set the studysheet attribute to the name of the studysheet
+            libutton.setAttribute("studysheet", text)
+            document.getElementById("libraryholder").appendChild(libutton)
+            console.log(id)
+            document.getElementById(id).onclick = function(){
+                var element = document.getElementById(this.id);
+                console.log(element)
+                link = "https://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+ element.getAttribute("studysheet")+"/delete"
+                console.log("link is: "+link)
+                httpGet(link)
+                //window.location.reload()
+            }
+            
         }
 
         // kids = libraryholder.children

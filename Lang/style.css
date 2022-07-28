@@ -475,7 +475,22 @@
   min-height: 20px;
 }
 
+.deletebutton {
+  width: 13vw;
+  height: 4vw;
+  border: none;
+  border-radius: 15px;
+  background-color: #001945;
+  color: wheat;
+  font-family: 'varela round';
+  font-size: 1vw;
+  min-width: 80px;
+  min-height: 20px;
+}
 
+.deletebutton:hover{
+  background-color:#ce1483;
+}
 .newbutton:hover{
   background-color:#ce1483;
 }
