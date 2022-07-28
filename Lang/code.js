@@ -200,9 +200,29 @@ function getLibrary(){
 
         // }
     }
-    document.getElementById("top").innerHTML = "Here are your cloudsaved Lang Studysheets, "+username+". Click on the Studysheet you want to use.";
-    document.getElementById("top2").innerHTML = "Not "+username+"? Click here to sign in to your account.";
-    document.getElementById("top2").onclick = function(){window.location.href="login.html"};
+    var usernametest = `<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+                <title>500 Internal Server Error</title>
+                <h1>Internal Server Error</h1>
+                <p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>`
+    console.log(username+"Username - username test "+usernametest)
+    if (document.getElementById("library0").innerHTML == "Invalid token"){
+        document.getElementById("top").innerHTML = "Uh oh. It seems like your login has expired. Please log in again.";
+        document.getElementById("top2").innerHTML = "Click here to sign in to your account.";
+        document.getElementById("top2").style.border = "1px solid black";
+        document.getElementById("top2").style.borderRadius = "15px";
+
+        document.getElementById("top2").onclick = function(){window.location.href="login.html"};
+        document.getElementById("library0").innerHTML = "Please log in again."
+        document.getElementById("library1").style.display="none"
+        document.getElementById("biguploadbutton").style.display="none"
+
+        
+    }else{
+        document.getElementById("top").innerHTML = "Here are your cloudsaved Lang Studysheets, "+username+". Click on the Studysheet you want to use.";
+        document.getElementById("top2").innerHTML = "Not "+username+"? Click here to sign in to your account.";
+        document.getElementById("top2").onclick = function(){window.location.href="login.html"};
+    }
+    
     
     console.log(library);
     
