@@ -98,22 +98,45 @@ function getLibrary(){
 
     }
     else{
+        library = library.split(",")
         for (i=0;i<library.length;i++){
             var librarytext = document.createElement('h1')
             librarytext.className="header";
-            librarytext.innerHTML = library[i]
-            librarytext.onclick = function(){httpGet("http://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+library[i])}
+            text = library[i]
+            librarytext.innerHTML = text
+            link = "http://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+librarytext.innerHTML
+            
+            console.log(link)
             id = "library"+generateIdA
             generateIdA++
             librarytext.id = id;
-            document.getElementById("library").appendChild(librarytext)
+            document.getElementById("libraryholder").appendChild(librarytext)
+            console.log(id)
+            document.getElementById(id).onclick = function(){
+                kids = document.getElementById("libraryholder")
+                var element = document.getElementById(this.id);
+                console.log(element)
+                link = "http://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+element.innerHTML
+                console.log("link is: "+link)
+                window.location.href=link
+            }
+        }
+
+        // kids = libraryholder.children
+        // for (i=0;i<kids.length;i++){
+        //     text = library[i]
+        //     link = "http://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+text
+        //     kids[i].onclick=function(){window.location.href=link}
+        //     console.log(link)
+
+        // }
     }
     document.getElementById("top").innerHTML = "Here are your cloudsaved Lang Studysheets, "+username+".";
     document.getElementById("top2").innerHTML = "Not "+username+"? Click here to sign in to your account.";
     document.getElementById("top2").onclick = function(){window.location.href="login.html"};
-
+    
     console.log(library);
-}
+    
 }
 //onload multiple functions
 function execute(){
