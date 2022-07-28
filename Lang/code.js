@@ -49,12 +49,29 @@ var testLength = 0;
 var sessionid = ""
 
 
+
 var url_string = window.location.href; //window.location.href
 var url = new URL(url_string);
 var c = url.searchParams.get("token");
 console.log(c);
-window.localStorage.setItem("usertoken", c);
+if (c != null) {
+    window.localStorage.setItem("usertoken", c);
+}
 sessionid = c;
+
+function changelibrary(){
+    if (window.localStorage.getItem("usertoken") != null) {
+        try {
+            document.getElementById("sil").innerHTML = "Library";
+            document.getElementById("sil").onclick = function(){
+                window.location.href = "library.html"; 
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
 
 function callmultiple(){
     getLibrary()
@@ -75,13 +92,19 @@ function httpGet(theUrl)
 function getLibrary(){
     sessionid = window.localStorage.getItem("usertoken");
     library = httpGet("http://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/list")
+    username = httpGet("http://nwvbug.pythonanywhere.com/"+sessionid+"/name")
     if(library == "[]"){
         document.getElementById("library").innerHTML = "You have no cloudsaved Lang Studysheets.";
 
     }
     else{
-        document.getElementById("library").innerHTML = library;
+        for (i=0;i<library.length;i++){
+            document.getElementById("library").innerHTML = library;
     }
+    document.getElementById("top").innerHTML = "Here are your cloudsaved Lang Studysheets, "+username+".";
+    document.getElementById("top2").innerHTML = "Not "+username+"? Click here to sign in to your account.";
+    document.getElementById("top2").onclick = function(){window.location.href="login.html"};
+
     console.log(library);
 }
 
@@ -98,6 +121,7 @@ function execute(){
         return check;
     };
     checkSettings()
+    changelibrary()
 }
 
 
