@@ -99,7 +99,14 @@ function getLibrary(){
     }
     else{
         for (i=0;i<library.length;i++){
-            document.getElementById("library").innerHTML = library;
+            var librarytext = document.createElement('h1')
+            librarytext.className="header";
+            librarytext.innerHTML = library[i]
+            librarytext.onclick = function(){httpGet("http://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+library[i])}
+            id = "library"+generateIdA
+            generateIdA++
+            librarytext.id = id;
+            document.getElementById("library").appendChild(librarytext)
     }
     document.getElementById("top").innerHTML = "Here are your cloudsaved Lang Studysheets, "+username+".";
     document.getElementById("top2").innerHTML = "Not "+username+"? Click here to sign in to your account.";
@@ -107,7 +114,7 @@ function getLibrary(){
 
     console.log(library);
 }
-
+}
 //onload multiple functions
 function execute(){
     //checks if user is on mobile
