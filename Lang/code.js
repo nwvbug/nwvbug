@@ -122,7 +122,7 @@ function uploadFiles(){
         reader.readAsText(file);
     }
     document.body.appendChild(uploadButton);
-    
+    window.location.reload()
 }
 
 function httpGet(theUrl)
@@ -186,7 +186,7 @@ function getLibrary(){
                 link = "https://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+ element.getAttribute("studysheet")+"/delete"
                 console.log("link is: "+link)
                 httpGet(link)
-                //window.location.reload()
+                window.location.reload()
             }
             
         }
