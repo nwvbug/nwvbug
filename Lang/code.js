@@ -46,6 +46,44 @@ var generateIdThem = 0
 var whatQuestion = 0
 var whatPro = 1;
 var testLength = 0;
+var sessionid = ""
+
+
+var url_string = window.location.href; //window.location.href
+var url = new URL(url_string);
+var c = url.searchParams.get("token");
+console.log(c);
+window.localStorage.setItem("usertoken", c);
+sessionid = c;
+
+function callmultiple(){
+    getLibrary()
+    checkSettings()
+    
+}
+
+
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+
+function getLibrary(){
+    sessionid = window.localStorage.getItem("usertoken");
+    library = httpGet("http://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/list")
+    if(library == "[]"){
+        document.getElementById("library").innerHTML = "You have no cloudsaved Lang Studysheets.";
+
+    }
+    else{
+        document.getElementById("library").innerHTML = library;
+    }
+    console.log(library);
+}
 
 //onload multiple functions
 function execute(){
@@ -1489,6 +1527,8 @@ function grabAllClasses(){
     var toSwitch = [copyrighttextclass, statstextcondtclass, statstextpcclass, statstextclass, dropbtnclass, smallbuttonclass, headerclass, inputtextclass, displaywordclass, bigselectionclass, smallselectionclass, showcorrectclass, explanationclass, statsclass, returnbuttonclass, footerclass]
     return toSwitch;
 }
+
+
 
 
 
