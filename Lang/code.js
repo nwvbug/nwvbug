@@ -91,8 +91,8 @@ function httpGet(theUrl)
 
 function getLibrary(){
     sessionid = window.localStorage.getItem("usertoken");
-    library = httpGet("http://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/list")
-    username = httpGet("http://nwvbug.pythonanywhere.com/"+sessionid+"/name")
+    library = httpGet("https://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/list")
+    username = httpGet("https://nwvbug.pythonanywhere.com/"+sessionid+"/name")
     if(library == "[]"){
         document.getElementById("library").innerHTML = "You have no cloudsaved Lang Studysheets.";
 
@@ -104,7 +104,7 @@ function getLibrary(){
             librarytext.className="header";
             text =library[i]
             librarytext.innerHTML = text
-            link = "http://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+librarytext.innerHTML
+            link = "https://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+librarytext.innerHTML
             
             console.log(link)
             id = "library"+generateIdA
@@ -116,7 +116,7 @@ function getLibrary(){
                 kids = document.getElementById("libraryholder")
                 var element = document.getElementById(this.id);
                 console.log(element)
-                link = "http://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+element.innerHTML
+                link = "https://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+element.innerHTML
                 console.log("link is: "+link)
                 window.location.href=link
             }
@@ -125,7 +125,7 @@ function getLibrary(){
         // kids = libraryholder.children
         // for (i=0;i<kids.length;i++){
         //     text = library[i]
-        //     link = "http://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+text
+        //     link = "https://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+text
         //     kids[i].onclick=function(){window.location.href=link}
         //     console.log(link)
 
