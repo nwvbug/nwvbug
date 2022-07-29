@@ -103,9 +103,10 @@
     border:5px;
     border-color: #d23e3e;
     border-radius: 15px;
-    width:10vw;
+    width:20vw;
     height:10vh;
     color: wheat;
+    margin:50px;
    
   }
 
@@ -486,6 +487,7 @@
   font-size: 1vw;
   min-width: 80px;
   min-height: 20px;
+  margin:15px;
 }
 
 .deletebutton:hover{

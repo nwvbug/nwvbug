@@ -114,15 +114,17 @@ function uploadFiles(){
             var data = text;
             console.log("sending " + data + " to " + url);
             xhr.send(data);
+            window.location.reload()
+
             
             // var textArea = document.createElement('textarea');
             // textArea.value = text;
             // document.body.appendChild(textArea);
         };
         reader.readAsText(file);
+
     }
     document.body.appendChild(uploadButton);
-    window.location.reload()
 }
 
 function httpGet(theUrl)
@@ -157,14 +159,37 @@ function getLibrary(){
             librarytext.id = id;
             document.getElementById("libraryholder").appendChild(librarytext)
             console.log(id)
+            // document.getElementById(id).onclick = function(){
+            //     kids = document.getElementById("libraryholder")
+            //     var element = document.getElementById(this.id);
+            //     console.log(element)
+            //     link = "https://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+element.innerHTML
+            //     console.log("link is: "+link)
+            //     window.location.href=link
+            // }
+
+            var downbutton = document.createElement('button')
+            downbutton.className="deletebutton";
+            text =library[i]
+            downbutton.innerHTML = "Download "+text
+            link = "https://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+librarytext.innerHTML
+            
+            console.log(link)
+            id = "library"+generateIdA
+            generateIdA++
+            downbutton.id = id;
+            // set the studysheet attribute to the name of the studysheet
+            downbutton.setAttribute("studysheet", text)
+            document.getElementById("libraryholder").appendChild(downbutton)
+            console.log(id)
             document.getElementById(id).onclick = function(){
-                kids = document.getElementById("libraryholder")
                 var element = document.getElementById(this.id);
                 console.log(element)
-                link = "https://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+element.innerHTML
+                link = "https://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/"+ element.getAttribute("studysheet")
                 console.log("link is: "+link)
-                window.location.href=link
+                window.location.href=link;
             }
+
 
             var libutton = document.createElement('button')
             libutton.className="deletebutton";
@@ -214,6 +239,8 @@ function getLibrary(){
         document.getElementById("top2").onclick = function(){window.location.href="login.html"};
         document.getElementById("library0").innerHTML = "Please log in again."
         document.getElementById("library1").style.display="none"
+        document.getElementById("library2").style.display="none"
+
         document.getElementById("biguploadbutton").style.display="none"
 
         

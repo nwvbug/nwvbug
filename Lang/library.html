@@ -19,14 +19,35 @@
         </div>
     </div>
 
-    <div id="libraryholder">
 
+    <div class="medbox">
+        <div>
+            <div id="libraryholder" >
+
+            </div>
+            <h1 class="header" id="library"></h1>
+            <button id = "biguploadbutton"  class="dropbtn3" onclick="uploadFiles()">Upload new Studysheet</button>
+        </div>
+        <div>
+            <div class="infodiv" style="border:5px solid #001945; border-radius:15px; margin:15px;">                
+                <p class="welcometext">Convert your Quizlet Study Sets to Lang Studysheets!</p>
+                <button class="newbutton" style="font-size:1.5vw;" onclick="window.location.href='compatibility.html'">Go to Convert</button>
+
+            </div>    
+            <div class="infodiv" style="border:5px solid #001945; border-radius:15px; margin:15px;">
+
+                <h1 class="welcometext">See featured Lang Studysheets made by others in the Lang community</h1>
+                <button class="newbutton" style="font-size:1.5vw;" onclick="window.location.href='https://github.com/nwvbug/nwvbug/tree/main/Lang/featured' ">Go to Featured</button>
+               
+            </div>
+        </div>
+        
+        
     </div>
-    <h1 class="header" id="library"></h1>
-    <button id = "biguploadbutton" class="dropbtn3" onclick="uploadFiles()">Upload</button>
+    
     <footer id = "feet" class="foot">
         <div class="samelineheader">
-            <p  id = "copyright" class="copyrighttext">Copyright NWVBUG Development, 2022. <a href="https://github.com/nwvbug/nwvbug">GitHub Repo & Source</a></p>
+            <p  id = "copyright" class="copyrighttext">Copyright NWVBUG Development & Lye Software, 2022. <a href="https://github.com/nwvbug/nwvbug">GitHub Repo & Source</a></p>
             <button id="return" class = "returnbutton" onclick="returnMain()">Exit</button>
         </div>
     </footer>
