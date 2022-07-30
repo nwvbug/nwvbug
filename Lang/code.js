@@ -80,14 +80,15 @@ function callmultiple(){
 }
 
 function uploadFiles(){
-    
-
+    if(document.getElementById("file")!=null){
+        return "brh";
+    }
     var uploadFile = document.createElement('input');
     uploadFile.type = 'file';
     uploadFile.id = 'file';
     uploadFile.name = 'file';
     uploadFile.accept = '.txt';
-    document.body.appendChild(uploadFile);
+    document.getElementById("libraryholder").appendChild(uploadFile)
     var uploadButton = document.createElement('button');
     uploadButton.innerHTML = 'Upload';
     uploadButton.onclick = function() {
@@ -124,7 +125,7 @@ function uploadFiles(){
         reader.readAsText(file);
 
     }
-    document.body.appendChild(uploadButton);
+    document.getElementById("libraryholder").appendChild(uploadButton)
 }
 
 function httpGet(theUrl)
@@ -146,7 +147,13 @@ function getLibrary(){
     }
     else{
         library = library.split(",")
+        if (library==""){
+            document.getElementById("library").innerHTML = "You have no cloudsaved Lang Studysheets.";
+        }
         for (i=0;i<library.length;i++){
+            if (library[i]==""){
+                continue
+            }
             var librarytext = document.createElement('h1')
             librarytext.className="header";
             text =library[i]
