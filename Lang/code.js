@@ -459,6 +459,9 @@ function onBtnPress(v) {
             uploadButton.style.display="none";
 
             doPracticeTest()
+        }else if(v=='speed'){
+            uploadButton.style.display="none";
+            doSpeedTest()
         }
         else{
             uploadButton.style.display="none";
@@ -535,6 +538,42 @@ function doFlashcards(){
 
 
 ///function to make custom sheet UI & general loop
+function doSpeedTest(v){
+    timer("Start")
+    document.getElementById("crctst").innerHTML = "Correct: " + correctCounter
+    document.getElementById("incorrect").innerHTML = "Incorrect: " + incorrectCounter
+
+    document.getElementById("myBtnBegin").style.display = "none";
+    document.getElementById("file").style.display = "none";
+
+    console.log("SELECT WORD")
+    
+    
+        
+    input = document.getElementById("input")
+    input.style.display = "flex";
+    buttonStyling = document.getElementById("goButton")
+    buttonStyling.style.display = "flex";
+    buttonStyling.innerHTML = ">" + "\n" + "Go!"
+    document.getElementById("stats").style.width = "15vw"
+    document.getElementById("stats").style.height = "110"
+    document.getElementById("crctst").style.fontSize = "15"
+    document.getElementById("incorrect").style.fontSize = "15"
+    document.getElementById("timerchange").style.display = "none";
+
+    whichCustom = v;
+    if (v=="s"){
+        wordPair = getRandomQuestion(customWords);
+        document.getElementById("displayWord").innerHTML = "conjugate: "+wordPair[0];
+        customAnswer = wordPair[1];
+    }
+    else{
+        wordPair = getRandomMultiQ(customWords);
+        
+        document.getElementById("displayWord").innerHTML = "conjugate: "+wordPair[0] + " in the "+wordPair[2] + " form.";
+        customAnswer = wordPair[1];    
+    }
+    }
 
 function doCustomSheets(v){
     document.getElementById("crctst").innerHTML = "Correct: " + correctCounter
@@ -1706,10 +1745,49 @@ function grabAllClasses(){
 }
 
 
+var time = 5;
+function timer(ck){
+
+    var sec = time; 
+    if(ck =="Start"){
+        var timer = setInterval(function(){
+            document.getElementById('timertext').innerHTML=+sec;
+            sec--;
+            if (sec<0){
+                clearInterval(timer);
+                buttonStyling.style.backgroundColor = "#ce1483"
+                setTimeout(function () { buttonStyling.style.backgroundColor = "grey" }, 1000)
+                input.value = ""
+                incorrectCounter += 1
+                document.getElementById("incorrect").innerHTML = "Incorrect: " + incorrectCounter
+                doSpeedTest("speed")    
+            }
+        }, 1000)
+    }
+    else{
+        clearInterval(timer);
+        document.getElementById("timertext").innerHTML = time
+        
+    }
+    
+}
 
 
+function changeSpeed(){
+    newSpeed = document.createElement("input");
+    newSpeed.type = "number";
+    newSpeed.id = "newSpeed";
+    newSpeed.placeholder = "Enter new time limit in seconds";
+    document.getElementById("timediv").appendChild(newSpeed);
+    document.getElementById("timerchange").innerHTML = "Submit New Speed"
+    document.getElementById("timerchange").onclick = function(){
+        time = document.getElementById("newSpeed").value;
+        document.getElementById("timediv").removeChild(newSpeed);
+        document.getElementById("timerchange").innerHTML = "Change Time Limit"
+        document.getElementById('timertext').innerHTML=time;
+        
+    }
 
-
-
+}
 
         
