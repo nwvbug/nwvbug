@@ -317,7 +317,7 @@ function makeRandom(){
         console.log("random mode toggled on");
         window.localStorage.setItem("random", "true");
         
-        copyright.style.color="wheat";
+        copyright.style.color="#FFEFD1";
         document.getElementById("randomchoice").checked = true;
 
         
@@ -1105,7 +1105,7 @@ function anklebowlMode(){
         window.localStorage.setItem("anklebowl", "true");
         let test = window.localStorage.getItem("anklebowl")
         console.log(test);
-        copyright.style.color="wheat";
+        copyright.style.color="#FFEFD1";
         document.getElementById("ankcheck").checked = true;
 
         
@@ -1142,7 +1142,7 @@ function darkMode(){
         window.localStorage.setItem("anklebowl", "true");
         let test = window.localStorage.getItem("anklebowl")
         console.log(test);
-        copyright.style.color="wheat";
+        copyright.style.color="#FFEFD1";
         document.getElementById("ankcheck").checked = true;
 
         
@@ -1175,7 +1175,7 @@ function checkSettings(){
     if (ank=="true"){
         document.getElementById("ankcheck").checked = true;
         feet.style.backgroundColor = "#001945";
-        copyright.style.color="wheat";
+        copyright.style.color="#FFEFD1";
         console.log("ank true")
         
     }
@@ -1267,7 +1267,7 @@ function amongusmode(){
     }
     else{
         document.body.style.backgroundImage = "none";
-        document.body.style.backgroundColor = "wheat";
+        document.body.style.backgroundColor = "#FFEFD1";
         amongUsChecker = false;
         window.localStorage.setItem("among", "false");
         document.getElementById("amongcheck").checked = false;
@@ -1690,7 +1690,7 @@ function resetColors(){
     
     for (var i=0; i<childarray.length; i++){
         var obj = childarray[i];
-        obj.style.backgroundColor = "wheat";
+        obj.style.backgroundColor = "#FFEFD1";
     }
     window.localStorage.setItem("dobackground", "false");
     window.localStorage.setItem("domainswitch", "false");
@@ -1717,7 +1717,7 @@ function resetColors(){
 
     //         if (childx.tagName.toLowerCase() === 'button'){
     //             obj.style.backgroundColor = "#001945";
-    //             obj.style.color = "wheat";
+    //             obj.style.color = "#FFEFD1";
     //         }else if (childx.tagName.toLowerCase()==='footer'){
     //             obj.style.backgroundColor = "#3e8e41";
     //         }

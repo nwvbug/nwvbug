@@ -7,7 +7,7 @@
 }
 
 .homepage{
-    background-color: wheat;
+    background-color: #FFEFD1;
     margin: 0;
     padding:20px;
 }
@@ -68,7 +68,7 @@
     border-radius: 15px;
     width:10vw;
     height:10vh;
-    color: wheat;
+    color: #FFEFD1;
    
   }
 
@@ -87,7 +87,7 @@
     border-radius: 15px;
     width:10vw;
     height:10vh;
-    color: wheat;
+    color: #FFEFD1;
    
   }
   .dropbtn3 {
@@ -105,7 +105,7 @@
     border-radius: 15px;
     width:20vw;
     height:10vh;
-    color: wheat;
+    color: #FFEFD1;
     margin:50px;
    
   }
@@ -232,7 +232,7 @@
     border-radius: 15px;
     width:100px;
     height:50px;
-    color: wheat;
+    color: #FFEFD1;
     background-color: #001945;
     font-family: 'Varela Round';
   }
@@ -330,25 +330,25 @@
 }
 
 .statsText{
-    color: wheat;
+    color: #FFEFD1;
     font-family: 'Varela Round';
 
 }
 
 .statsTextPr{
-    color: wheat;
+    color: #FFEFD1;
     font-family: 'Varela Round';
     font-size: 32px;
 }
 
 .statsTextPc{
-    color: wheat;
+    color: #FFEFD1;
     font-family: 'Varela Round';
     font-size: 28px;
 }
 
 .statsTextCondt{
-    color: wheat;
+    color: #FFEFD1;
     font-family: 'Varela Round';
     font-size: 36px;
 }
@@ -365,7 +365,7 @@
     border-color: #001945;
     border-radius: 15px;
     background-color: #001945;
-    color: wheat;
+    color: #FFEFD1;
 }
 
 .returnbutton{
@@ -441,7 +441,7 @@
 
 
 .infodiv{
-  background-color:wheat; 
+  background-color:#FFEFD1; 
   height:20vw; 
   width:20vw; 
   border-radius:20px;
@@ -469,7 +469,7 @@
   border: none;
   border-radius: 15px;
   background-color: #001945;
-  color: wheat;
+  color: #FFEFD1;
   font-family: 'varela round';
   font-size: 2vw;
   min-width: 80px;
@@ -482,7 +482,7 @@
   border: none;
   border-radius: 15px;
   background-color: #001945;
-  color: wheat;
+  color: #FFEFD1;
   font-family: 'varela round';
   font-size: 1vw;
   min-width: 80px;
@@ -631,13 +631,13 @@
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
   background-color: #001945;
-  color: wheat;
+  color: #FFEFD1;
   border-radius: 15px;
 
 }
 
 .frontcardtext{
-  color:wheat;
+  color:#FFEFD1;
   font-family: 'Varela Round';
 }
 
