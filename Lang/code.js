@@ -436,6 +436,7 @@ async function getTheFile() {
 //function called when button to begin custom verb read is called- creates inputs & calls other functions to get questions
 
 function onBtnPress(v) {
+    
     var uploadFile = document.createElement('input');
     uploadFile.type = 'file';
     uploadFile.id = 'file';
@@ -535,10 +536,36 @@ function doFlashcards(){
 }
 
 
+function toggleAudio(){
+    var music = new Audio('speedmusic.mp3');
+    if (document.getElementById("soundcheck").checked == true){
+        
+        music.play();
+        music.loop =true;
+        music.playbackRate = 1;
+        document.getElementById("soundcheck").checked == true
+
+
+    }
+    else{
+        music.pause();
+        music.loop =false;
+        music.currentTime = 0;
+
+    }
+    
+}
+
 
 
 ///function to make custom sheet UI & general loop
 function doSpeedTest(v){
+    var wage = document.getElementById("input");
+    wage.addEventListener("keydown", function (e) {
+        if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
+            getInput()
+        }
+    });
     timer("Start")
     document.getElementById("crctst").innerHTML = "Correct: " + correctCounter
     document.getElementById("incorrect").innerHTML = "Incorrect: " + incorrectCounter
@@ -576,6 +603,12 @@ function doSpeedTest(v){
     }
 
 function doCustomSheets(v){
+    var wage = document.getElementById("input");
+    wage.addEventListener("keydown", function (e) {
+        if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
+            getInput()
+        }
+    });
     document.getElementById("crctst").innerHTML = "Correct: " + correctCounter
     document.getElementById("incorrect").innerHTML = "Incorrect: " + incorrectCounter
 
@@ -768,6 +801,13 @@ function checkEnter() {
 //Main loop for preloaded verbs- gets Q&A, creates Ui, etc
 
 function selectWord(language) {
+
+    var wage = document.getElementById("input");
+    wage.addEventListener("keydown", function (e) {
+        if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
+            getInput()
+        }
+    });
     document.getElementById("crctst").innerHTML = "Correct: " + correctCounter
     document.getElementById("incorrect").innerHTML = "Incorrect: " + incorrectCounter
 
