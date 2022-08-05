@@ -56,6 +56,8 @@ var c = url.searchParams.get("token");
 console.log(c);
 if (c != null) {
     window.localStorage.setItem("usertoken", c);
+}else{
+
 }
 sessionid = c;
 
@@ -138,6 +140,14 @@ function httpGet(theUrl)
 
 
 function getLibrary(){
+    if (c==null){
+        document.getElementById("library").innerHTML = "Something went wrong. Check your network connection and try again.";
+        document.getElementById("top").innerHTML = "Lang Cloudsave requires an internet connection. You can still use locally saved Studysheets while offline. ";
+        document.getElementById("biguploadbutton").style.display = "none";
+
+
+
+    }
     sessionid = window.localStorage.getItem("usertoken");
     library = httpGet("https://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/list")
     username = httpGet("https://nwvbug.pythonanywhere.com/"+sessionid+"/name")
@@ -461,10 +471,23 @@ function onBtnPress(v) {
 
             doPracticeTest()
         }else if(v=='speed'){
+            var wage = document.getElementById("input");
+            wage.addEventListener("keydown", function (e) {
+                if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
+                    checkCustom("Speed")
+                }
+            });
             uploadButton.style.display="none";
+            timer("Start")
             doSpeedTest()
         }
         else{
+            var wage = document.getElementById("input");
+            wage.addEventListener("keydown", function (e) {
+                if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
+                    checkCustom()
+                }
+            });
             uploadButton.style.display="none";
             doCustomSheets(v);
         }
@@ -560,13 +583,7 @@ function toggleAudio(){
 
 ///function to make custom sheet UI & general loop
 function doSpeedTest(v){
-    var wage = document.getElementById("input");
-    wage.addEventListener("keydown", function (e) {
-        if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
-            getInput()
-        }
-    });
-    timer("Start")
+    
     document.getElementById("crctst").innerHTML = "Correct: " + correctCounter
     document.getElementById("incorrect").innerHTML = "Incorrect: " + incorrectCounter
 
@@ -589,17 +606,13 @@ function doSpeedTest(v){
     document.getElementById("timerchange").style.display = "none";
 
     whichCustom = v;
-    if (v=="s"){
-        wordPair = getRandomQuestion(customWords);
-        document.getElementById("displayWord").innerHTML = "conjugate: "+wordPair[0];
-        customAnswer = wordPair[1];
-    }
-    else{
-        wordPair = getRandomMultiQ(customWords);
-        
-        document.getElementById("displayWord").innerHTML = "conjugate: "+wordPair[0] + " in the "+wordPair[2] + " form.";
-        customAnswer = wordPair[1];    
-    }
+    
+    wordPair = getRandomQuestion(customWords);
+    console.log("Got random question: " + wordPair)
+    document.getElementById("displayWord").innerHTML = "conjugate: "+wordPair[0];
+    customAnswer = wordPair[1];
+    
+    
     }
 
 function doCustomSheets(v){
@@ -1030,7 +1043,7 @@ function getInput() {
 
 //get & check user inputs for custom verbs
 
-function checkCustom(){
+function checkCustom(v){
     usrInput = input.value;
     if (usrInput == customAnswer){
         correctCounter += 1
@@ -1045,6 +1058,10 @@ function checkCustom(){
         input.value = ""
         incorrectCounter += 1
         document.getElementById("incorrect").innerHTML = "Incorrect: " + incorrectCounter
+        timer("clear")
+        if (v == "Speed"){
+            doSpeedTest("Speed")
+        }
     }
     
 }
@@ -1786,30 +1803,46 @@ function grabAllClasses(){
 
 
 var time = 5;
+var timer1 = null;
 function timer(ck){
 
     var sec = time; 
     if(ck =="Start"){
-        var timer = setInterval(function(){
-            document.getElementById('timertext').innerHTML=+sec;
+        console.log("Timer created")
+        timer1 = setInterval(function(){
+            console.log("Timer " + timer + " ticked");
+            document.getElementById('timertext').innerHTML=sec;
             sec--;
             if (sec<0){
                 clearInterval(timer);
-                buttonStyling.style.backgroundColor = "#ce1483"
-                setTimeout(function () { buttonStyling.style.backgroundColor = "grey" }, 1000)
-                input.value = ""
-                incorrectCounter += 1
-                document.getElementById("incorrect").innerHTML = "Incorrect: " + incorrectCounter
-                doSpeedTest("speed")    
+                document.getElementById("timertext").innerHTML = time
+                incorrectSpeed()
+                sec = time
             }
         }, 1000)
     }
     else{
-        clearInterval(timer);
+        clearInterval(timer1);
+        console.log("Clearing timer: " + timer)
         document.getElementById("timertext").innerHTML = time
+        sec = time
+        this.timer("Start");
+        
+        
         
     }
     
+}
+
+function incorrectSpeed(){
+    timer("clear")
+    buttonStyling.style.backgroundColor = "#ce1483"
+    setTimeout(function () { buttonStyling.style.backgroundColor = "grey" }, 1000)
+    input.value = ""
+    incorrectCounter += 1
+    document.getElementById("incorrect").innerHTML = "Incorrect: " + incorrectCounter
+    doSpeedTest("speed")    
+
 }
 
 
