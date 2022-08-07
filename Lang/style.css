@@ -686,3 +686,26 @@
   text-align: center;
   padding-bottom: 50px;
 }
+
+.multiplechoice{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  margin: 2.5vw;
+  padding: 2.5vw;
+  border-radius: 40px;
+  flex-wrap:wrap;
+}
+
+#myProgress {
+  width: 100%;
+  background-color: grey;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: #001945;
+}

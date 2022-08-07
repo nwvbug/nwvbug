@@ -49,6 +49,30 @@ var testLength = 0;
 var sessionid = ""
 
 
+function fakeload(){
+    console.log("loading")
+    window.location.href="homepage.html"
+}
+
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 50);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+        fakeload()
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
+}
 
 var url_string = window.location.href; //window.location.href
 var url = new URL(url_string);
@@ -140,14 +164,14 @@ function httpGet(theUrl)
 
 
 function getLibrary(){
-    if (c==null){
-        document.getElementById("library").innerHTML = "Something went wrong. Check your network connection and try again.";
-        document.getElementById("top").innerHTML = "Lang Cloudsave requires an internet connection. You can still use locally saved Studysheets while offline. ";
-        document.getElementById("biguploadbutton").style.display = "none";
+    // if (c==null){
+    //     document.getElementById("library").innerHTML = "Something went wrong. Check your network connection and try again.";
+    //     document.getElementById("top").innerHTML = "Lang Cloudsave requires an internet connection. You can still use locally saved Studysheets while offline. ";
+    //     document.getElementById("biguploadbutton").style.display = "none";
 
 
 
-    }
+    // }
     sessionid = window.localStorage.getItem("usertoken");
     library = httpGet("https://nwvbug.pythonanywhere.com/"+sessionid+"/Studysheets/list")
     username = httpGet("https://nwvbug.pythonanywhere.com/"+sessionid+"/name")
@@ -412,6 +436,96 @@ function getRandomMultiQ(textBlock){
     
 }
 
+
+function doMultiTest(){
+    document.getElementById("myBtnBegin").style.display = "none";
+    document.getElementById("file").style.display = "none";
+
+    console.log("this is what customwords is "+customWords)
+    console.log("random question ran")
+    let arrayText = customWords.split("\n")
+    var button = document.createElement("BUTTON")
+    testLength = arrayText.length;
+    for(i=0; i<=arrayText.length; i++){
+        try {
+            var questionText = document.createElement('h1')
+            questionText.className="header";
+            let random_question = arrayText[i];
+            var questionArray = JSON.parse(random_question)
+            questionText.innerHTML=questionArray[0];
+
+            id = "answerInput"+generateIdA
+            var verbInput = document.createElement('INPUT');
+            verbInput.className="inputSeen"
+            verbInput.setAttribute("type", "text");
+            verbInput.setAttribute("id",id)
+            generateIdA++
+            verbInput.placeholder="Answer";
+            document.getElementById("minicreator").appendChild(questionText);
+            document.getElementById("minicreator").appendChild(verbInput);
+        } catch (error) {
+            break;
+        }
+    }
+    var br = document.createElement("br")
+    document.getElementById("minicreator").appendChild(br);
+    var br = document.createElement("br")
+    document.getElementById("minicreator").appendChild(br);
+    button.className = "dropbtn"
+    button.innerHTML= "Submit"
+    button.onclick = function(){
+        let arrayText = customWords.split("\n")
+        for(i=0; i<testLength;i++){
+            let random_question = arrayText[i];
+            var questionArray = JSON.parse(random_question)
+            let id = "answerInput"+i
+            if (document.getElementById(id).value == questionArray[1]){
+                document.getElementById(id).style.backgroundColor="green";
+            }else{
+                document.getElementById(id).style.backgroundColor="red";
+            }
+    
+        }
+        sussy = document.createElement("button")
+        sussy.onclick = function(){
+            if (confirm("Any data you entered may not be saved. Press 'OK' to continue or 'Cancel' to go back.") == true){
+                window.location.reload();
+            }
+            else{
+                
+            }
+        }
+        var br = document.createElement("br")
+        document.getElementById("minicreator").appendChild(br);
+        var br = document.createElement("br")
+        document.getElementById("minicreator").appendChild(br);
+        sussy.innerHTML = "Reset"
+        sussy.className="dropbtn2"
+        document.getElementById("minicreator").appendChild(sussy);
+    }
+    
+    document.getElementById("minicreator").appendChild(button);
+    
+    
+
+
+
+    // console.log("arrtext= "+arrayText)
+    
+        
+    // let random_number = Math.floor(Math.random() *arrayText.length);
+    // console.log(random_number)
+    // let random_question = arrayText[random_number];
+    // console.log(random_question)
+    // var questionArray = JSON.parse(random_question)
+    // console.log(questionArray)
+    // return questionArray
+    
+}
+
+
+
+
 //code to make file picker appear in read custom and retreive data from it
 
 let fileHandle;
@@ -451,7 +565,7 @@ function onBtnPress(v) {
     uploadFile.type = 'file';
     uploadFile.id = 'file';
     uploadFile.name = 'file';
-    uploadFile.accept = '.txt';
+    uploadFile.accept = '.lang, .txt';
     document.body.appendChild(uploadFile);
     var uploadButton = document.createElement('button');
     uploadButton.innerHTML = 'Upload';
@@ -795,7 +909,7 @@ function showVerbs(language) {
 
 
 function returnMain() {
-    location.href = "index.html";
+    location.href = "homepage.html";
 }
 
 
@@ -1539,7 +1653,7 @@ function downloadVerbs(select){
 
 function save(data) {
     namefile = window.prompt("Enter the name for the study sheet","LangCustomVerbSheet");
-    filename = namefile;
+    filename = namefile+".lang";
     if (filename == null){
 
     }
