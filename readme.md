@@ -5,7 +5,6 @@
 
 Go to https://nwvbug.com for the most up-to-date informaton regarding projects.
 
-For information regarding Lye Software or RyCorp, visit their respective sites at https://lye.software and https://rypixel.net
 
 ## Lye Software Endorsed:
 ## Lang: 
