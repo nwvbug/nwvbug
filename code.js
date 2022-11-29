@@ -9,7 +9,7 @@ function doAnimation(editclass, text, div, num){
     if(num == 1){
         document.getElementById(div).style.backgroundColor = 'wheat';
     }else{
-        document.getElementById(div).style.backgroundColor = '#66a3bb';
+        document.getElementById(div).style.backgroundColor = '#f214a2';
 
     }
     textObj.style.display='';

@@ -12,6 +12,7 @@
 /*{"last_published":"2022-07-06 01:39:52 UTC"}*/
 
 @import url("https://p.typekit.net/p.css?s=1&k=zvx6ogf&ht=tk&f=39858&a=42691170&app=typekit&e=css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Rubik+Mono+One&display=swap');
 
 @font-face {
 font-family:"alfarn";
@@ -175,7 +176,7 @@ body {
 } */
 
 .text{
-    font-family: "alfarn",sans-serif;
+    font-family: Poppins;
     opacity: 1;
     font-size:3.25vh;
 }
@@ -290,14 +291,14 @@ body {
 
 
 .largetext{
-    font-family: "alfarn",sans-serif;
+    font-family: Poppins;
     opacity: 1;
     font-size:2vw;
     line-height:1.25;
 }
 
 .textproj{
-    font-family: "alfarn",sans-serif;
+    font-family: Poppins;
     opacity: 1;
     font-size:2.25vh;
 }
