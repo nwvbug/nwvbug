@@ -1,73 +1,148 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
-    <meta name="description" content="NWVBUG Development- Lang & other projects">
-    <meta name="keywords" content="Lang, Study, verbs, french, language">
-    <meta name="author" content="NWVBUG Development">    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NWVBUG Development</title>
-    <link rel="icon" href="bgnwvbugicon.png">
-    <script src="code.js"></script>
-    <link rel="stylesheet" href="style.css">
-
-
+    <title>NWVBUG</title>
+    <link rel="icon" href="assets/logos/NWVBUG.svg">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="mousething.css">
 </head>
-<body id="body" onload="onLoad()">
-
-    <div id="vidcont" style="height:100vh;">
-        <video id="myvideo" muted class="intro">
-            <source src="nwvbug animated intro purple.mp4"></source>
-        </video>
-    </div>
+<style>
     
-    <div class="bigbox" >
-        <div class="container" >
-            <div class="horizontalbox" >
-                <div id='leftdiv' onclick="window.location.href='https://www.langstudy.tech'" style="background-color:wheat;" class="horizontalminibox2" onmouseout = "doAnimationButUndo('thumbnail2', 'text1', 'rightdiv', '1')" onmouseover="doAnimation('thumbnail2', 'text1', 'rightdiv', '1')" >
-                    <img class="thumbnail" id="thumbnail" src = "RedesLangwBg.png" >
-                    <h1 id="text2" class="largetext" style="display:none;">SpamBot can perform various tasks including spamming and holding conversations using OpenAI's GPT-3 Davinci Transformer model. </h1>
+</style>
+<body>
+    <header class="horizontalflex hdr" id="hdr" style="background-color:#dad7cd; align-items: center; justify-content: space-between; position:fixed; width:100vw; border-radius: 0px 0px 20px 20px; border-bottom: 5px solid#18333a; z-index:500;">
+        <img src="assets/logos/nwvbug.png" style="width:5vw; height:fit-content; margin:20px;">
+                <div>
+                    <div class="bigtext" style="font-size:40px;">NWVBUG Development</div>
+                    <div class="smallertext" style="font-size:20px; text-align: right;">Quality products for all.</div>
                 </div>
-                <div id='rightdiv' onclick="window.location.href='spambotinfo.html'" style="background-color:#f214a2;" class="horizontalminibox" onmouseout = "doAnimationButUndo('thumbnail', 'text2', 'leftdiv', '2')" onmouseover="doAnimation('thumbnail', 'text2', 'leftdiv', '2')" >
-                    <img class="thumbnail2" id="thumbnail2" src="Continuity SpamBot.png" >
-                    <h1 id="text1" class="largetext" style="display:none;">Tired of old, ad-filled, and boring study sessions? Lang is the site for you! Lang features built in French verbs, and allows you to make your own lists to study whatever language you want. Review with flashcards, build memory with the writing mode, or take a practice test and be ready to get the A+. All of this and more, completely free and with no ads.</h1>
-                </div>  
+    </header>
 
+    <div class="verticalflex" style="align-items: center; justify-content: center; height:100vh;">
+        <div class="container" style="width:90vw; height:90vh; border-radius: 20px; display:flex; flex-direction: column;">
+            <div class="horizontalflex" style="width:80vw; align-items: center; justify-content: space-evenly; flex-wrap: wrap;">
+                <img src="assets/logos/nwvbug.png" style="width:15vw; height:fit-content;">
+                <div class="vl"></div>
+                <div>
+                    <div class="bigtext">NWVBUG Development</div>
+                    <div class="smallertext">Quality products for all.</div>
+                </div>
             </div>
+            <div class="mouse_scroll" style="position:absolute; top:70vh;" id="mouse">
+
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div>
+                    <span class="m_scroll_arrows unu"></span>
+                    <span class="m_scroll_arrows doi"></span>
+                    <span class="m_scroll_arrows trei"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="medtext" style="color:#dad7cd; width:100vw; text-align: center;">NWVBUG creates free, quality, services that can be used by anyone.</div>
+    
+    <div class="horizontalflex" style="margin-top:50px; align-items: center; justify-content: space-around;">
+        <div style="width:40vw; height:65vh; background-color: #dad7cd; border-radius: 50px;">
+            <div class="smallertext" style="width:100%; text-align:center;">NWVBUG in Education</div>
+            <div class="smalltext" style="padding:20px; padding-bottom: 0px; text-align: center;">
+                NWVBUG Development's educational product became so successful that it was adopted by Lye Software and is now branded as a Lye product.
+                However, internally, NWVBUG still heads development. Lang Study is a free studying platform with a variety of studying methods, including AI.
                 
+            </div>
+            <div class="smalltext" style="margin-top:40px; margin-bottom:40px; width:100%; text-align:center; color:#18333a; "><em>Learn more about Lang Study:</em></div>
+            <div class="horizontalflex" style="width:100%; align-items: center; justify-content: center;">
+                <img src="assets/logos/redesLangTr.png" style="height:15vh;cursor:pointer;" onclick="window.location.href='https://langstudy.tech/onboarding.html'">
+            </div>
         </div>
 
-        <div class="minibox">
-            <div class="samelineheader">
-                <button class="aboutbutton" onclick="window.location.href='projects.html'" >Other NWVBUG Projects</button>
-
-
-                <img src="shortnwvbug.png" class="image">
-                
-                <button class="aboutbutton" onclick='window.location.href="https://lye.software"'>About NWVBUG & Other Brands</button>
-
+        <div style="width:40vw; height:65vh; background-color: #dad7cd; border-radius: 50px;">
+            <div class="smallertext" style="width:100%; text-align:center;">NWVBUG in Artificial Intelligence</div>
+            <div class="smalltext" style="padding:20px; padding-bottom: 0px; text-align: center;">
+                NWVBUG Development has ventured into Artificial Intelligence multiple times, with its flagship product being the chatbot SpamBot. 
+                Under the SpamBot project, NWVBUG exhibits how fluid and realistic human interaction with AI can be possible.
             </div>
-            
-        </div>
-
-        <div class="minibox" >
-            
-
-            <div id = "feet" class="foot">
-                <p id = "copyright" class="copyrighttext">Copyright NWVBUG Development, 2022. <a href="https://github.com/nwvbug/">GitHub</a></p>
+            <div class="smalltext" style="margin:0px; width:100%; text-align:center; color:#18333a; "><em>Explore NWVBUG AI:</em></div>
+            <div class="horizontalflex" style="width:100%; align-items: center; justify-content: center;">
+                <img src="assets/logos/SpamBot-1.png" style="height:30vh;">
+                <img src="assets/logos/Lang Assistant.png" style="height:13vh; cursor:pointer;" onclick="window.location.href='https://langstudy.tech/langAssistantFAQ.html'">
             </div>
         </div>
     </div>
 
-    
+
+    <div class="verticalflex" style="align-items: center; justify-content: center; height:60vh;">
+        <div class="container" style="width:90vw; height:45vh; border-radius: 20px; display:flex; flex-direction: column;">
+            <div class="horizontalflex" style="width:80vw; align-items: center; justify-content: space-evenly; flex-wrap: wrap;">
+                <div class="smallertext" style="width:100%; text-align:center;">Partnerships</div>
+                <div class="smalltext" style="padding:20px; padding-bottom: 0px; text-align: center;">
+                    NWVBUG Development operates under parent company Lye Sofware. Lye Software acts as the face of many of the consumer-facing products and operates the Lye Account System, which is used in NWVBUG products.
+                    NWVBUG Development has a sister company RyCorp, which also operates under Lye Software. RyCorp specializes in video games and Artificial Intelligence, and as such, NWVBUG and RyCorp often collaborate on AI projects.
+                    
+                </div>
+                <img src="assets/logos/lyelogo.png" style="height:13vh; cursor:pointer;" onclick="window.location.href='https://lye.software'">
+                <img src="assets/logos/rycorp.png" style="height:13vh; cursor:pointer;" onclick="window.location.href='https://rypixel.net'">
+            </div>
+        </div>
+    </div>
 
 
-    
+    <div class="medtext" style="font-size:20px; margin-bottom:0px; color:#dad7cd; width:100vw; text-align: center;">Copyright 2023 NWVBUG</div>
+    <div class="medtext" style="font-size:20px; margin-bottom:40px; color:#dad7cd; width:100vw; text-align: center;">Lion by Robert Bjurshagen from <a href="https://thenounproject.com/browse/icons/term/lion/" target="_blank" title="Lion Icons">Noun Project</a> </div>
 
-   
-
-   
-    
 
 </body>
 </html>
+<script>
+    window.addEventListener("scroll",function() { 
+   if(window.scrollY > 500) {
+      slideDown();
+   }
+   else {
+      slideUp();
+   }
+},false);
+
+function slideDown(){
+    document.getElementById("hdr").style.top = "0";
+}
+function slideUp(){
+    console.log("sliding up")
+    document.getElementById("hdr").style.top = "-150px";
+}
+
+
+// var mouse = document.getElementById('mouse');
+
+// function fadeOutOnScroll(element) {
+// 	if (!element) {
+// 		console.log("bruh");
+// 	}
+	
+// 	var distanceToTop = window.pageYOffset + element.getBoundingClientRect().top;
+// 	var elementHeight = element.offsetHeight;
+// 	var scrollTop = document.documentElement.scrollTop;
+	
+// 	var opacity = 1;
+	
+// 	if (scrollTop > distanceToTop) {
+// 		opacity = 1 - (scrollTop - distanceToTop);
+// 	}
+	
+// 	if (opacity >= 0) {
+// 		element.style.opacity = opacity;
+// 	}
+// }
+
+// function scrollHandler() {
+// 	fadeOutOnScroll(mouse);
+// }
+
+// window.addEventListener('scroll', scrollHandler);
+
+</script>
