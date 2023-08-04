@@ -1,4 +1,4 @@
-<img src="https://github.com/nwvbug/nwvbug-logos/blob/main/NWVBUG%20Logos/nwvbug%20full.png?raw=true" alt="nwvbug full.png" height="300px"/>
+<img src="https://github.com/nwvbug/nwvbug-logos/blob/main/NWVBUG%20Logos/nwvbug_true.png?raw=true" alt="nwvbug full.png" height="300px"/>
 
 # Lye Projects that I work on:
 
