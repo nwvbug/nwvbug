@@ -163,6 +163,17 @@
 
     }
     
+    .back{
+        transition:1s;
+        color:white;
+        cursor: url("{{ url_for('static', filename='nwvbugbw32.png') }}"), auto;
+    }
+    .back:hover{
+        background-color: white;
+        color:black;
+        cursor: url("{{ url_for('static', filename='nwvbugbw32.png') }}"), auto;
+
+    }
 
 </style>
 <body>
@@ -179,17 +190,18 @@
 
         </div>
     </div>
-    <div style="width:100vw; height:100vh; background-color: black; position:absolute; z-index: 200; top:0;" id="block">
-
+    <div style="width:100vw; height:100vh; background-color: black; position:absolute; z-index: 200; top:0; text-align: center; display:Flex; flex-direction: column; justify-content: center;" id="block">
+        This website is best viewed on a computer or non-touchscreen device.
+        If you have no other device, a phone will still work.
     </div>
-    <div style="bottom:0; width:100vw; height:60vh; justify-content: space-evenly;" class="horizontalFlex">
-        <div class= "box ai" style="border: 2px solid white; border-radius: 20px; padding:20px; min-width:350px; text-align: center; width:30vw;" id="ai">
+    <div style="bottom:0; width:100vw; height:60vh; justify-content: space-evenly; flex-wrap:wrap;" class="horizontalFlex">
+        <div class= "box ai" onclick="learnMoreAI()"style="border: 2px solid white; border-radius: 20px; padding:20px; min-width:350px; text-align: center; width:30vw;" id="ai">
             <h1>
                 Artificial Intelligence
             </h1>
             <p>Learn how NWVBUG is advancing fluid human and AI interactions.</p>
         </div>
-        <div class = "edu box" style="border: 2px solid white; border-radius: 20px;  min-width:350px; padding:20px; text-align: center; width:30vw;" id="edu">
+        <div class = "edu box" onclick= "learnMoreEdu()" style="border: 2px solid white; border-radius: 20px;  min-width:350px; padding:20px; text-align: center; width:30vw;" id="edu">
             
             <h1 style="z-index: 1;">
                 Education
@@ -204,6 +216,9 @@
 </body> 
 </html>
 <script>
+
+var edu = document.getElementById("edu")
+var ai = document.getElementById("ai")
 
 var effect = VANTA.GLOBE({
   el: "body",
@@ -229,7 +244,7 @@ setTimeout(function(){
     document.getElementById("block").style.display = "none";
 }, 3000)
 
-document.getElementById("edu").onmouseover = function(){
+function eduOver(){
     console.log("run")
     document.getElementById("ring").className = "changedRing"
     color = new THREE.Color(0xf5deb3);
@@ -238,18 +253,22 @@ document.getElementById("edu").onmouseover = function(){
     document.getElementById("copyright").style.color = "#f5deb3"
 }
 
-document.getElementById("edu").onmouseout = function(){
-    document.getElementById("ring").className = "ring"
-    //color = new Color(255, 255, 255, 1);
-    color = new THREE.Color(0xffffff);
-    //THREE.color = "0xf5deb3"
-    effect.changeColor(color);
-    document.getElementById("copyright").style.color = "#ffffff"
+edu.onmouseover = function(){
+    eduOver()
+
+    
+}
+
+edu.onmouseout = function(){
+    out()
 
 }
 
 
-document.getElementById("ai").onmouseover = function(){
+ai.onmouseover = function(){
+    aiOver()
+}
+function aiOver(){
     console.log("run")
     document.getElementById("ring").className = "changedRing"
     color = new THREE.Color(0xF7139F);
@@ -257,15 +276,84 @@ document.getElementById("ai").onmouseover = function(){
     effect.changeColor(color);
     document.getElementById("copyright").style.color = "#F7139F"
 }
+ai.onmouseout = function(){
+    out()
 
-document.getElementById("ai").onmouseout = function(){
+}
+
+function learnMoreEdu(){
+    backHover(ai)
+    ai.style.flex= "0.05"
+    edu.style.flex= "0.9"
+    ai.className = "back box"
+    ai.innerHTML = `
+    <h1>
+                Back
+    </h1>
+    `
+    ai.onclick=function(){
+        reset();
+    }
+}
+
+function reset(){
+    edu.style.flex= "initial"
+    ai.style.flex= "initial"
+    edu.innerHTML = `
+    <h1 style="z-index: 1;">
+                Education
+            </h1>
+            <p>Learn how NWVBUG supports free and quality education for all.</p>
+    `
+    ai.innerHTML = `
+    <h1>
+                Artificial Intelligence
+            </h1>
+            <p>Learn how NWVBUG is advancing fluid human and AI interactions.</p>
+    `
+    edu.onclick = learnMoreEdu
+    ai.onclick = learnMoreAI
+    ai.className = "ai box"
+    edu.className = "edu box"
+
+    edu.onmouseover = function(){eduOver()}
+    edu.onmouseout = function(){out()}
+    ai.onmouseover = function(){aiOver()}
+    ai.onmouseout = function(){out()}
+}
+
+function learnMoreAI(){
+    edu.style.flex= "0.05"
+    ai.style.flex= "0.9"
+    edu.innerHTML = `
+    <h1>
+                Back
+    </h1>
+    `
+    edu.className = "back box"
+    edu.onclick=function(){
+        reset();
+    }
+    backHover(edu)
+}
+
+function backHover(elem){
+    elem.onmouseover = function(){
+        document.getElementById("ring").className = "ring"
+        //color = new Color(255, 255, 255, 1);
+        color = new THREE.Color(0xffffff);
+        //THREE.color = "0xf5deb3"
+        effect.changeColor(color);
+        document.getElementById("copyright").style.color = "#ffffff"
+    }
+}   
+
+function out(){
     document.getElementById("ring").className = "ring"
     //color = new Color(255, 255, 255, 1);
     color = new THREE.Color(0xffffff);
     //THREE.color = "0xf5deb3"
     effect.changeColor(color);
     document.getElementById("copyright").style.color = "#ffffff"
-
 }
-
 </script>
