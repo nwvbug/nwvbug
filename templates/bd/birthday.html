@@ -1,0 +1,113 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Jasmine!</title>
+</head>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:wght@500;800&display=swap');
+    body{
+        background: linear-gradient(90deg, rgba(170,20,184,1) 0%, rgba(9,9,121,1) 58%, rgba(0,255,177,1) 100%);
+        font-family: 'Jost', sans-serif;
+        color:white;
+
+    }
+    .verticalFlex{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .center{
+        justify-content: center;
+    }
+
+    .full{
+        width:100%;
+        height:100%;
+    }
+
+    .horizontalFlex{
+        display:flex;
+        flex-direction: row;
+    }
+
+    .goal{
+        width:20vw;
+    }
+
+    .ballNoAni{
+        position:absolute;
+        width: 5vw;
+        height:5vw;
+        transform: translateX(-1500px)
+    }
+
+    .ballAni{
+        position:absolute;
+
+        transform: translateX(-1500px);
+        width: 5vw;
+        height:5vw;
+        animation: ball 3s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes ball{
+        0%{
+            transform: rotate(0deg);
+            transform: translateX(-1500px);
+        }
+
+        
+        50%{
+            
+            transform: rotate(360deg);
+            transform: translateX(-600px);
+            
+            
+        }
+
+        100%{
+            
+            transform: rotate(720deg);
+            transform:translateX(-100px);
+            transform:translateY(60px);
+        }
+    }
+    .j{
+        height:200px;
+        width:150px;
+    }
+</style>
+<body>
+    <div class="verticalFlex full center">
+        <div class="horizontalFlex">
+            <div id="animationholder" style="width:100%; display:flex; justify-content: right;">
+                <img src="{{ url_for('static', filename='bd/soccerball.png') }}" class="ballNoAni" id="ball" onclick="change()">
+                
+                <img src="{{ url_for('static', filename='bd/goal.png') }}" class="goal">
+            </div>
+        </div>
+        <div class="horizontalFlex" style="width:100%; justify-content: space-evenly; display:none;" id="j">
+            <img class = "j" src="{{ url_for('static', filename='bd/j-1.jpg') }}">
+            <div style="font-size:150px;">Happy Birthday Jasmine!</div>
+            <img class = "j" src="{{ url_for('static', filename='bd/j-2.png') }}">
+        </div>
+        
+    </div>
+</body>
+</html>
+<script>
+
+    function change(){
+        document.getElementById("ball").className = "ballAni"
+        finish()
+    }
+
+    function finish(){
+        setTimeout(function(){
+            document.getElementById("j").style.display = "flex";
+        }, 3000)
+    }
+    
+</script>
