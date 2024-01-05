@@ -4,7 +4,7 @@
 
 ## Lang: 
 
-<img src="https://github.com/nwvbug/nwvbug-logos/blob/main/Lang%20Logos/RedesLangwBg.png" width="125" height="125">
+<img src="https://github.com/nwvbug/nwvbug-logos/blob/main/Lang%20Logos/RedesLangwBg.png" width="150" height="150">
 
 #### Study Smarter, Not Harder.
 Tired of overpriced studying?
@@ -31,6 +31,7 @@ Lang has no ads and is completely free to use. Forever. Lye Software promises to
 SpamBot is a state-of-the-art AI Chatbot that currently has an interface through Discord. It runs on the ~~Davinci-002 GPT-3 model~~ from OpenAI (I used to use this model due to lack of RHLF, but now it is being discontinued. I'll find a new model). It has memory and can reference details from earlier in the conversation. It's personality is customizable through the spaCy prompt-addition system. Currently working on a rewrite in Java that will allow for more customization in terms of what language model runs it. 
 
 ## nwvbug Chats
+<img src="https://github.com/nwvbug/nwvbug-logos/blob/main/nwvbug%20Chats/lockup-nwvbugchats.png?raw=true" width="auto" height="125">
 
 While on a trip, I discovered that Discord is actually written quite inefficiently. On connection, you are sent a lot of information that is not necessary to have right away. It was annoying, as I was in a place with poor internet connection. nwvbug Chats fixes this issue by introducing a middleman server that strategically makes the Discord packets smaller, and doesn't send unnecessary information. Additionally, more information is stored locally, and is only sent if the server notices a change, as opposed to Discord's strategy of sending everything (like statuses, for example), even if they haven't changed. In progress. Eventually, this will occupy https://chats.nwvbug.com, but not yet.
 
