@@ -1,5 +1,3 @@
-<img src="https://github.com/nwvbug/nwvbug-logos/blob/main/NWVBUG%20Logos/nwvbug_true.png?raw=true" alt="nwvbug full.png" height="200px"/>
-
 # Lye Projects that I work on:
 
 ## Lang: 
