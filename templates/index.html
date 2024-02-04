@@ -4,356 +4,166 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NWVBUG</title>
-    <link rel="icon" href="{{ url_for('static', filename='nwvbug_bw.png') }}">
-    <script src="{{ url_for('static', filename='js/three.r134.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/vanta.globe.min.js') }}"></script>
+    <link rel="icon" href="{{ url_for('static', filename='nwvbug logo.png') }}">
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Jost:wght@500;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;500;900&display=swap');
+
     body{
-        background-color: black;
+        background-color: #D8DEE9;
+        font-family: "Jost", sans-serif;
+        font-weight: 500;
         margin:0;
-        font-family: 'Jost', sans-serif;
-        color:white;
+        padding:0;
+        overflow-x:hidden;
     }
-    .verticalFlex{
-        display:flex;
-        flex-direction: column;
+    p{
+        font-weight: 300;
+        font-size:25px;
     }
-
-    .center{
-        justify-content: center;
+    h1{
+        font-weight: 900;
+        font-size:50px;
     }
-
-    .full{
-        width:100%;
-        height:100%;
-    }
-
-    .horizontalFlex{
-        display:flex;
-        flex-direction: row;
-    }
-
-    .face{
-        height:10vw;
-        width:10vw;
-        transition: 1s;
-    }
-
-    .abs{
+    .blob{
         position:absolute;
+        z-index:-1;
+        max-width:40%;
     }
 
-    .ring:hover{
-        animation: spin linear 1s infinite;
+    .fullscreenFlex{
+        display:flex;
+        align-content: center;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        min-height:100vh;
     }
 
-    .ring{
-        height:10vw;
-        width:10vw;
-        transition: 1s;
-        animation-delay: 4s;
-        
-        animation: spin linear 4s infinite;
-        
+    .header{
+        position:sticky;
+        position: -webkit-sticky; /* Safari */
+        width:100vw;
+        z-index:2;
+        display:flex;
+        align-items: center;
+        top:20px;
+    }
+    .headerItem{
+        max-height:10vh;
+        margin-left:10px;
     }
 
-    .changedRing{
-        height:10vw;
-        width:10vw;
-        transition: 1s;
-        animation-delay: 4s;
-        
-        animation: spinLoader ease-in-out 3s infinite;
+    #frontLine{
+        stroke-dasharray: 1266.2342529296875;
+        stroke-dashoffset: 1266.2342529296875;
+        animation: frontline 3s ease;
+        animation-fill-mode:forwards;
     }
-
-    .fadeIn{
-        animation-delay: 4s;
-        animation-fill-mode: forwards;
-        animation: fade 1s ease-in;
-    }
-
-    @keyframes spinLoader{
-        0% {
-            transform: scale(1);
-            rotate: 0deg;
-        }
-        
-        50% {
-            transform: scale(1.5);
-            rotate: 180deg;
-        }
-
-        100% {
-            transform: scale(1);
-            rotate: 360deg;
-        } 
-    }
-
-    @keyframes spin{
-        0% {
-            rotate: 0deg;
-        }
-        
-        50% {
-            rotate: 180deg;
-        }
-
-        100% {
-            rotate: 360deg;
-        } 
-    }
-
-    @keyframes loadIn{
-        0%{
-            opacity: 0;
-        }
-        99%{
-            opacity: 1;
-        }
-        100%{
-            opacity: 0;
-            display:none;
-        }
-    }
-    @keyframes fade{
-        0%{
-            opacity: 0;
-        }
-        100%{
-            opacity:1;
+    @keyframes frontline{
+        to {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 20;
         }
     }
 
-    .part{
-        animation: loadIn 3s ease-in;
-        opacity:0;
+
+    #hostingLine{
+        stroke-dasharray: 468.59130859375;
+        stroke-dashoffset: 468.59130859375;
+        animation: projectLines 3s ease;
+        animation-fill-mode:forwards;
+    }
+    #langstudyLine{
+        stroke-dasharray: 747.3287353515625;
+        stroke-dashoffset: 747.3287353515625;
+        animation: langLines 3s ease;
+        animation-fill-mode:forwards;
+    }
+    #chatLine{
+        stroke-dasharray: 747.3287353515625;
+        stroke-dashoffset: 747.3287353515625;
+        animation: langLines 3s ease;
+        animation-fill-mode:forwards;
+    }
+    @keyframes projectLines {
+        to {
+            stroke-dashoffset:0;
+            stroke-dasharray: 20;
+        }
+    }
+    @keyframes langLines {
+        to {
+            stroke-dashoffset:0;
+            stroke-dasharray: 25;
+        }
     }
 
-    .edu{
-        transition:1s;
-        backdrop-filter: blur(10px);
-        color:#ffffff;
-        cursor: url("{{ url_for('static', filename='lang32.png') }}"), auto;
+    .projectLogo{
+        height:60px;
+        margin:5px;
     }
-    
-
-    .edu:hover{
-        background-color: wheat;
-        color:#001945;
-        cursor: url("{{ url_for('static', filename='lang32.png') }}"), auto;
-
-    }
-
-    .box{
-        backdrop-filter: blur(10px);
-        transition:1s;
-        backdrop-filter: blur(10px);
-        color:#ffffff;
-    }
-    .ai{
-        transition:1s;
-        cursor: url("{{ url_for('static', filename='ai32.png') }}"), auto;
-    }
-
-    .ai:hover{
-        background-color: #321B3A;
-        color: #F7139F;
-        cursor: url("{{ url_for('static', filename='ai32.png') }}"), auto;
-
-    }
-    
-    .back{
-        transition:1s;
-        color:white;
-        cursor: url("{{ url_for('static', filename='nwvbugbw32.png') }}"), auto;
-    }
-    .back:hover{
-        background-color: white;
-        color:black;
-        cursor: url("{{ url_for('static', filename='nwvbugbw32.png') }}"), auto;
-
-    }
-
 </style>
 <body>
-    <div class="verticalFlex" style="padding:30px; z-index:300;">
-        <div class="horizontalFlex center" style="">
-            <img class = "face abs" src="{{ url_for('static', filename='sizedFace.png') }}">
+    
+    <img class = "blob" src="{{ url_for('static', filename='blob 1 brown.svg') }}">
+    <img class = "blob" style="bottom:0; right:0;" src="{{ url_for('static', filename='blob 2 white.svg') }}">
 
-            <img class="face abs part" style="animation-delay:0s;" src="{{ url_for('static', filename='rings/RINGS-1.png') }}">
-            <img class="face abs part" style="animation-delay:0.5s;" src="{{ url_for('static', filename='rings/RINGS-2.png') }}">
-            <img class="face abs part" style="animation-delay:1s;" src="{{ url_for('static', filename='rings/RINGS-3.png') }}">
-            <img class="face abs part" style="animation-delay:2s;" src="{{ url_for('static', filename='rings/RINGS-4.png') }}">
-            <img class="face abs part" style="animation-delay:1.5s;" src="{{ url_for('static', filename='rings/RINGS-5.png') }}">
-            <img class="face abs" id="ring" style="display:none;" src="{{ url_for('static', filename='sizedRings.png') }}">
+    <div class="fullscreenFlex">
+        <div style="text-align: center; width:40%;">
+            <h1>Modern, human-first web development.</h1>
+            <p>Scroll to learn how nwvbug aims to set the bar higher with human-first programming.</p>
+        </div>
 
+        <div style="display:flex; flex-direction: column; align-items: center;">
+            <img src="{{ url_for('static', filename='nwvbug logo.png') }}" style="max-width: 40%;">
+            <svg width="350" height="150" viewBox="0 0 527 196" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id = "frontLine" d="M287.5 62.5V5M287.5 62.5C287.5 62.5 260.243 89.2633 239.5 98.5C226.126 104.455 209 97.3235 193 71.5M287.5 62.5C287.5 62.5 342.092 30.4304 358 37C372.221 42.8732 374.947 75.9236 397.25 91.5M496.489 191C496.489 191 484.196 140.77 496.489 118C511.798 89.6433 527.257 55.0202 519.5 42.5C509.489 26.3423 471.712 107.826 452.5 106C428.392 103.708 409.813 71.2242 397.25 91.5M193 71.5C193 98.0557 209 148.944 209 175.5M193 71.5C180.871 51.9237 126.858 17.5391 103.5 19C83.3865 20.258 18.9445 81.6427 8.49993 98.5C-5.48661 121.074 41.4999 141 74.5 146C107.5 151 69.5 191 69.5 191M397.25 91.5C397.25 118.056 327.577 111.387 320.5 141C317.414 153.914 341.5 180 341.5 180" stroke="#2E3440" stroke-width="10" stroke-linecap="round"/>
+            </svg>        
+            <img src="{{ url_for('static', filename='project logos.png') }}" style="max-width: 75%;">
+        </div>
+
+    </div>
+    <img style = "max-width:40%; z-index:-1; right:0; position:absolute; " src="{{ url_for('static', filename='blob 3 white.svg') }}">
+
+    <div class="header">
+        <!-- <img class="headerItem" src="{{ url_for('static', filename='hamborger.png') }}" style="height:20px; margin-left:70px;"> -->
+        <img class="headerItem" src="{{ url_for('static', filename='nwvbug logo.png') }}" style="height:70px; margin-left:70px;">
+    </div>
+
+
+    <div>
+        <h1 style="text-align: right; margin-right:10%;">about</h1>
+
+        <div style="display:flex; align-items: center; justify-content: center; margin-bottom:90px;">
+            <p style="max-width:40%; text-align:center;">We are independent. We believe in data privacy and equal access to technology, which is why we host all of our services ourselves.</p>
+            <svg width="250" height="112" viewBox="0 0 409 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id = "hostingLine" d="M5.5 52.999C61.3646 71.881 90.0839 3.49414 149 5.99995C225.174 9.23978 249.219 132.72 319 102C345.462 90.3504 348.782 58.5244 374.5 52.999C385.763 50.5791 390.833 52.999 404 52.999" stroke="#2E3440" stroke-width="10" stroke-linecap="round"/>
+            </svg>
+            <img class="projectLogo" src="{{ url_for('static', filename='nwvbughosting.png') }}">
+        </div>
+
+        <div style="display:flex; align-items: center; justify-content: center; margin-bottom:90px;">
+            <img class="projectLogo" src="{{ url_for('static', filename='langstudy.png') }}" style="height:90px;">
+            <svg width="300" height="83" viewBox="0 0 636 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="langstudyLine" d="M630.5 39.4999C630.5 39.4999 594.375 76.0333 565 76.4999C534.772 76.9801 526.769 44.7698 497 39.4999C480.657 36.6068 465.882 60.6622 449.5 57.9999C425.912 54.1667 410.878 49.7769 388 39.4999C362.208 27.9141 364 2 334 15.9999C304 29.9998 320.124 42.4562 301 57.9999C274.029 79.9218 241.425 76.4982 212 57.9999C194.134 46.7685 196.523 26.111 178 15.9999C154.691 3.27618 132.442 1.80198 110 15.9999C93.2491 26.5976 96.8439 45.4514 81.5 57.9999C68.3142 68.7834 58.6968 73.1286 42 76.4999C28.0278 79.3211 5.5 76.4999 5.5 76.4999" stroke="#2E3440" stroke-width="13" stroke-linecap="round"/>
+            </svg>
+            <p style="max-width:40%; text-align:center;">We believe that education should be free for all. It should not come at the cost of your money, privacy, or data.</p>
+        </div>
+
+        <div style="display:flex; align-items: center; justify-content: center; margin-bottom:90px;">
+            <p style="max-width:40%; text-align:center;">We believe that your ability to talk to people should not be restricted by your internet speed.</p>
+            <svg width="300" height="162" viewBox="0 0 537 162" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="chatLine" d="M5.5 65C18.1833 49.8627 60 97.5 60 97.5C60 97.5 93.5686 160.164 128.5 156C163.842 151.787 146.71 71.9617 181 81.5C181 81.5 210.872 103.772 230 97.5C249.304 91.1698 260 55 260 55C283.528 37.2255 292.697 18.774 321 10.5C344.427 3.65133 360.251 3.07004 383.5 10.5C403.157 16.7822 411.536 26.5577 428 39C440.487 48.4366 442.888 63.8831 458.5 65C469.533 65.7894 475.891 61.2756 485 55C496.578 47.023 493.859 31.4998 507 26.5C515.942 23.0977 522.558 23.0977 531.5 26.5" stroke="#2E3440" stroke-width="12" stroke-linecap="round"/>
+            </svg>
+            <img class="projectLogo" src="{{ url_for('static', filename='chats.png') }}" style="height:120px;">
         </div>
     </div>
-    <div style="width:100vw; height:100vh; background-color: black; position:absolute; z-index: 200; top:0; text-align: center; display:Flex; flex-direction: column; justify-content: center;" id="block">
-        This website is best viewed on a computer or non-touchscreen device.
-        If you have no other device, a phone will still work.
-    </div>
-    <div style="bottom:0; width:100vw; height:60vh; justify-content: space-evenly; flex-wrap:wrap;" class="horizontalFlex">
-        <div class= "box ai" onclick="learnMoreAI()"style="border: 2px solid white; border-radius: 20px; padding:20px; min-width:350px; text-align: center; width:30vw;" id="ai">
-            <h1>
-                Artificial Intelligence
-            </h1>
-            <p>Learn how NWVBUG is advancing fluid human and AI interactions.</p>
-        </div>
-        <div class = "edu box" onclick= "learnMoreEdu()" style="border: 2px solid white; border-radius: 20px;  min-width:350px; padding:20px; text-align: center; width:30vw;" id="edu">
-            
-            <h1 style="z-index: 1;">
-                Education
-            </h1>
-            <p>Learn how NWVBUG supports free and quality education for all.</p>
-        </div>
-        
-    </div>
-    <div style="bottom:0; width:100%; position:absolute; text-align: center; transition:1s;" id="copyright">
-        2023, NWVBUG Development. NWVBUG is a copyright of Natesh Vemuri.
+
+    <div>
+
     </div>
 </body> 
 </html>
 <script>
 
-var edu = document.getElementById("edu")
-var ai = document.getElementById("ai")
-
-var effect = VANTA.GLOBE({
-  el: "body",
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 100.00,
-  minWidth: 100.00,
-  scale: 0.50,
-  scaleMobile: 1.00,
-  color: 0xffffff,
-  backgroundColor: 0x0
-})
-
-setTimeout(function(){
-    document.getElementById("ring").style.display = ""
-    document.getElementById("ring").className = "ring"
-
-    arr = document.getElementsByClassName("part")
-    for (var i = 0; i < arr.length; i++){
-        arr[i].style.display = "none"
-    }
-    document.getElementById("block").style.display = "none";
-}, 3000)
-
-function eduOver(){
-    console.log("run")
-    document.getElementById("ring").className = "changedRing"
-    color = new THREE.Color(0xf5deb3);
-    //THREE.color = "0xf5deb3"
-    effect.changeColor(color);
-    document.getElementById("copyright").style.color = "#f5deb3"
-}
-
-edu.onmouseover = function(){
-    eduOver()
-
-    
-}
-
-edu.onmouseout = function(){
-    out()
-
-}
-
-
-ai.onmouseover = function(){
-    aiOver()
-}
-function aiOver(){
-    console.log("run")
-    document.getElementById("ring").className = "changedRing"
-    color = new THREE.Color(0xF7139F);
-    //THREE.color = "0xf5deb3"
-    effect.changeColor(color);
-    document.getElementById("copyright").style.color = "#F7139F"
-}
-ai.onmouseout = function(){
-    out()
-
-}
-
-function learnMoreEdu(){
-    backHover(ai)
-    ai.style.flex= "0.05"
-    edu.style.flex= "0.9"
-    ai.className = "back box"
-    ai.innerHTML = `
-    <h1>
-                Back
-    </h1>
-    `
-    ai.onclick=function(){
-        reset();
-    }
-}
-
-function reset(){
-    edu.style.flex= "initial"
-    ai.style.flex= "initial"
-    edu.innerHTML = `
-    <h1 style="z-index: 1;">
-                Education
-            </h1>
-            <p>Learn how NWVBUG supports free and quality education for all.</p>
-    `
-    ai.innerHTML = `
-    <h1>
-                Artificial Intelligence
-            </h1>
-            <p>Learn how NWVBUG is advancing fluid human and AI interactions.</p>
-    `
-    edu.onclick = learnMoreEdu
-    ai.onclick = learnMoreAI
-    ai.className = "ai box"
-    edu.className = "edu box"
-
-    edu.onmouseover = function(){eduOver()}
-    edu.onmouseout = function(){out()}
-    ai.onmouseover = function(){aiOver()}
-    ai.onmouseout = function(){out()}
-}
-
-function learnMoreAI(){
-    edu.style.flex= "0.05"
-    ai.style.flex= "0.9"
-    edu.innerHTML = `
-    <h1>
-                Back
-    </h1>
-    `
-    edu.className = "back box"
-    edu.onclick=function(){
-        reset();
-    }
-    backHover(edu)
-}
-
-function backHover(elem){
-    elem.onmouseover = function(){
-        document.getElementById("ring").className = "ring"
-        //color = new Color(255, 255, 255, 1);
-        color = new THREE.Color(0xffffff);
-        //THREE.color = "0xf5deb3"
-        effect.changeColor(color);
-        document.getElementById("copyright").style.color = "#ffffff"
-    }
-}   
-
-function out(){
-    document.getElementById("ring").className = "ring"
-    //color = new Color(255, 255, 255, 1);
-    color = new THREE.Color(0xffffff);
-    //THREE.color = "0xf5deb3"
-    effect.changeColor(color);
-    document.getElementById("copyright").style.color = "#ffffff"
-}
 </script>
