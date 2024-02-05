@@ -74,30 +74,34 @@
             stroke-dasharray: 20;
         }
         100%{
-            stroke-dashoffset: 500;
+            stroke-dashoffset: 200;
             stroke-dasharray: 20;
         }
         
     }
 
-
+    .projectAnimationDefault{
+        animation: projectLines 3s ease;
+        animation-fill-mode:forwards;
+    }
+    .projectAnimationAlt{
+        animation: langLines 3s ease;
+        animation-fill-mode:forwards;
+    }
     #hostingLine{
         stroke-dasharray: 468.59130859375;
         stroke-dashoffset: 468.59130859375;
-        animation: projectLines 3s ease;
-        animation-fill-mode:forwards;
+        
     }
     #langstudyLine{
         stroke-dasharray: 747.3287353515625;
         stroke-dashoffset: 747.3287353515625;
-        animation: langLines 3s ease;
-        animation-fill-mode:forwards;
+        
     }
     #chatLine{
         stroke-dasharray: 747.3287353515625;
         stroke-dashoffset: 747.3287353515625;
-        animation: langLines 3s ease;
-        animation-fill-mode:forwards;
+        
     }
     @keyframes projectLines {
         to {
@@ -116,6 +120,36 @@
         height:60px;
         margin:5px;
     }
+    .projectHolderRight{
+        height:600px; display:flex; align-items: center; max-width: 700px;padding-left: 40%; transition: 1s; opacity:0;
+    }
+    .projectHolderLeft{
+        height:600px; display:flex; align-items: center; max-width: 700px;padding-left: 10%; transition: 1s; opacity:0;
+    }
+    .projectRight{
+        z-index:-1; position:absolute; left:50%; width:400px;
+    }
+    .projectLeft{
+        z-index:-1; position:absolute; left:20%; width:400px; 
+    }
+    .inview{
+        opacity:1;
+    }
+    @media screen and (max-width: 1000px) {
+        .projectHolderRight{
+            height:600px; display:flex; align-items: center; max-width: 100%; padding:100px; text-align: center; padding-bottom:25px; padding-top:25px;
+        }
+        .projectHolderLeft{
+            height:600px; display:flex; align-items: center; max-width: 100%; padding:100px; text-align: center; padding-bottom:25px; padding-top:25px;
+        }
+        .projectRight{
+            z-index:-1; position:absolute; width:400px; left:0; right:0; margin-left:auto; margin-right:auto;
+        }
+        .projectLeft{
+            z-index:-1; position:absolute; width:400px; left:0; right:0; margin-left:auto; margin-right:auto;
+        }
+    }
+
 </style>
 <body>
     
@@ -137,7 +171,7 @@
         </div>
 
     </div>
-    <img style = "max-width:40%; z-index:-1; right:0; position:absolute; " src="{{ url_for('static', filename='blob 3 white.svg') }}">
+    <img id="firstCloud" style = "max-width:40%; z-index:-1; right:0; position:absolute; " src="{{ url_for('static', filename='blob 3 white.svg') }}">
 
     <div class="header">
         <!-- <img class="headerItem" src="{{ url_for('static', filename='hamborger.png') }}" style="height:20px; margin-left:70px;"> -->
@@ -146,9 +180,9 @@
 
 
     <div>
-        <h1 style="text-align: right; margin-right:10%;">about</h1>
+        <h1 style="text-align: right; margin-right:10%;" id="aboutText">about</h1>
 
-        <div style="display:flex; align-items: center; justify-content: center; margin-bottom:90px;">
+        <div id="hostingEntry" style="display:flex; align-items: center; justify-content: center; margin-bottom:90px;">
             <p style="max-width:40%; text-align:center;">We are independent. We believe in data privacy and equal access to technology, which is why we host all of our services ourselves.</p>
             <svg width="250" height="112" viewBox="0 0 409 112" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path id = "hostingLine" d="M5.5 52.999C61.3646 71.881 90.0839 3.49414 149 5.99995C225.174 9.23978 249.219 132.72 319 102C345.462 90.3504 348.782 58.5244 374.5 52.999C385.763 50.5791 390.833 52.999 404 52.999" stroke="#2E3440" stroke-width="10" stroke-linecap="round"/>
@@ -158,7 +192,7 @@
 
         <img style = "max-width:40%; z-index:-1; left:0; position:absolute; " src="{{ url_for('static', filename='blob 4 brown.svg') }}">
 
-        <div style="display:flex; align-items: center; justify-content: center; margin-bottom:90px;">
+        <div id="langEntry" style="display:flex; align-items: center; justify-content: center; margin-bottom:90px;">
             <img class="projectLogo" src="{{ url_for('static', filename='langstudy.png') }}" style="height:90px;">
             <svg width="300" height="83" viewBox="0 0 636 83" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path id="langstudyLine" d="M630.5 39.4999C630.5 39.4999 594.375 76.0333 565 76.4999C534.772 76.9801 526.769 44.7698 497 39.4999C480.657 36.6068 465.882 60.6622 449.5 57.9999C425.912 54.1667 410.878 49.7769 388 39.4999C362.208 27.9141 364 2 334 15.9999C304 29.9998 320.124 42.4562 301 57.9999C274.029 79.9218 241.425 76.4982 212 57.9999C194.134 46.7685 196.523 26.111 178 15.9999C154.691 3.27618 132.442 1.80198 110 15.9999C93.2491 26.5976 96.8439 45.4514 81.5 57.9999C68.3142 68.7834 58.6968 73.1286 42 76.4999C28.0278 79.3211 5.5 76.4999 5.5 76.4999" stroke="#2E3440" stroke-width="13" stroke-linecap="round"/>
@@ -166,7 +200,7 @@
             <p style="max-width:40%; text-align:center;">We believe that education should be free for all. It should not come at the cost of your money, privacy, or data.</p>
         </div>
 
-        <div style="display:flex; align-items: center; justify-content: center; margin-bottom:90px;">
+        <div id="chatEntry" style="display:flex; align-items: center; justify-content: center; margin-bottom:90px;">
             <p style="max-width:40%; text-align:center;">We believe that your ability to talk to people should not be restricted by your internet speed.</p>
             <svg width="300" height="162" viewBox="0 0 537 162" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path id="chatLine" d="M5.5 65C18.1833 49.8627 60 97.5 60 97.5C60 97.5 93.5686 160.164 128.5 156C163.842 151.787 146.71 71.9617 181 81.5C181 81.5 210.872 103.772 230 97.5C249.304 91.1698 260 55 260 55C283.528 37.2255 292.697 18.774 321 10.5C344.427 3.65133 360.251 3.07004 383.5 10.5C403.157 16.7822 411.536 26.5577 428 39C440.487 48.4366 442.888 63.8831 458.5 65C469.533 65.7894 475.891 61.2756 485 55C496.578 47.023 493.859 31.4998 507 26.5C515.942 23.0977 522.558 23.0977 531.5 26.5" stroke="#2E3440" stroke-width="12" stroke-linecap="round"/>
@@ -175,29 +209,29 @@
         </div>
     </div>
     <h1 style="font-weight:500; width:100%; text-align: center; font-size:40px;">We believe that <strong>your</strong> technology should help <strong>you.</strong></h1>
-    <img style = "max-width:40%; z-index:-1; right:0; position:absolute; " src="{{ url_for('static', filename='blob 5 white.svg') }}">
+    <img id="projectsText" style = "max-width:40%; z-index:-1; right:0; position:absolute; " src="{{ url_for('static', filename='blob 5 white.svg') }}">
     <div style="display:flex; flex-direction: column;">
         <h1 style="text-align: right; margin-right:10%; margin-top:250px;">projects</h1>
         
-        <div style="height:600px; display:flex; align-items: center; max-width: 700px;padding-left: 10%;">
-            <img src="{{ url_for('static', filename='lang blob.svg') }}" style="z-index:-1; position:absolute; left:20%; width:400px;">
+        <div class= "projectHolderLeft" id="langHolder">
+            <img src="{{ url_for('static', filename='lang blob.svg') }}" class="projectLeft">
             <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
         </div>
 
-        <div style="height:600px; display:flex; align-items: center; max-width: 700px;padding-left: 40%;">
-            <img src="{{ url_for('static', filename='hosting blob.svg') }}" style="z-index:-1; position:absolute; left:50%; width:500px;">
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-
-        </div>
-
-        <div style="height:600px; display:flex; align-items: center; max-width: 700px;padding-left: 10%;">
-            <img src="{{ url_for('static', filename='chats blob.svg') }}" style="z-index:-1; position:absolute; left:20%; width:400px;">
+        <div class= "projectHolderRight" id="hostingHolder">
+            <img src="{{ url_for('static', filename='hosting blob.svg') }}" class="projectRight" style="width:500px;">
             <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
 
         </div>
 
-        <div style="height:600px; display:flex; align-items: center; max-width: 700px;padding-left: 40%;">
-            <img src="{{ url_for('static', filename='spam blob.svg') }}" style="z-index:-1; position:absolute; left:50%; width:400px;">
+        <div class= "projectHolderLeft" id="chatHolder">
+            <img src="{{ url_for('static', filename='chats blob.svg') }}" class="projectLeft">
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+        </div>
+
+        <div class= "projectHolderRight" id="spambotHolder">
+            <img src="{{ url_for('static', filename='spam blob.svg') }}" class="projectRight">
             <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
 
         </div>
@@ -205,7 +239,27 @@
 </body> 
 </html>
 <script>
-//setTimeout(function(){
-  //  document.getElementById("frontLine").style.animation = "repeat 8s forwards"
-//}, 2900)
+window.addEventListener("scroll", (event) => {
+    var offset = window.pageYOffset;
+    if (offset>document.getElementById("projectsText").offsetTop && !document.getElementById("langHolder").classList.contains("inview")){
+        document.getElementById("langHolder").classList.add("inview");
+    }if (offset>document.getElementById("chatHolder").offsetTop && !document.getElementById("spambotHolder").classList.contains("inview")){
+        document.getElementById("spambotHolder").classList.add("inview");
+    }if (offset>document.getElementById("hostingHolder").offsetTop && !document.getElementById("chatHolder").classList.contains("inview")){
+        document.getElementById("chatHolder").classList.add("inview");
+    }if (offset>document.getElementById("langHolder").offsetTop && !document.getElementById("hostingHolder").classList.contains("inview")){
+        document.getElementById("hostingHolder").classList.add("inview");
+    }
+
+    if (offset>document.getElementById("firstCloud").offsetTop && !document.getElementById("hostingLine").classList.contains("projectAnimationDefault")){
+        document.getElementById("hostingLine").classList.add("projectAnimationDefault");
+        setTimeout(function(){
+            document.getElementById("langstudyLine").classList.add("projectAnimationAlt");
+        }, 3000);
+        setTimeout(function(){
+            document.getElementById("chatLine").classList.add("projectAnimationAlt");
+        }, 6000)
+
+    }
+})
 </script>
