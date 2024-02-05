@@ -56,14 +56,28 @@
     #frontLine{
         stroke-dasharray: 1266.2342529296875;
         stroke-dashoffset: 1266.2342529296875;
+        
         animation: frontline 3s ease;
-        animation-fill-mode:forwards;
+        animation-fill-mode:forwards; 
+        
+        
     }
     @keyframes frontline{
         to {
             stroke-dashoffset: 0;
             stroke-dasharray: 20;
         }
+    }
+    @keyframes repeat{
+        0%{
+            stroke-dashoffset: 0;
+            stroke-dasharray: 20;
+        }
+        100%{
+            stroke-dashoffset: 500;
+            stroke-dasharray: 20;
+        }
+        
     }
 
 
@@ -142,6 +156,8 @@
             <img class="projectLogo" src="{{ url_for('static', filename='nwvbughosting.png') }}">
         </div>
 
+        <img style = "max-width:40%; z-index:-1; left:0; position:absolute; " src="{{ url_for('static', filename='blob 4 brown.svg') }}">
+
         <div style="display:flex; align-items: center; justify-content: center; margin-bottom:90px;">
             <img class="projectLogo" src="{{ url_for('static', filename='langstudy.png') }}" style="height:90px;">
             <svg width="300" height="83" viewBox="0 0 636 83" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -158,12 +174,38 @@
             <img class="projectLogo" src="{{ url_for('static', filename='chats.png') }}" style="height:120px;">
         </div>
     </div>
+    <h1 style="font-weight:500; width:100%; text-align: center; font-size:40px;">We believe that <strong>your</strong> technology should help <strong>you.</strong></h1>
+    <img style = "max-width:40%; z-index:-1; right:0; position:absolute; " src="{{ url_for('static', filename='blob 5 white.svg') }}">
+    <div style="display:flex; flex-direction: column;">
+        <h1 style="text-align: right; margin-right:10%; margin-top:250px;">projects</h1>
+        
+        <div style="height:600px; display:flex; align-items: center; max-width: 700px;padding-left: 10%;">
+            <img src="{{ url_for('static', filename='lang blob.svg') }}" style="z-index:-1; position:absolute; left:20%; width:400px;">
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        </div>
 
-    <div>
+        <div style="height:600px; display:flex; align-items: center; max-width: 700px;padding-left: 40%;">
+            <img src="{{ url_for('static', filename='hosting blob.svg') }}" style="z-index:-1; position:absolute; left:50%; width:500px;">
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
 
+        </div>
+
+        <div style="height:600px; display:flex; align-items: center; max-width: 700px;padding-left: 10%;">
+            <img src="{{ url_for('static', filename='chats blob.svg') }}" style="z-index:-1; position:absolute; left:20%; width:400px;">
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+        </div>
+
+        <div style="height:600px; display:flex; align-items: center; max-width: 700px;padding-left: 40%;">
+            <img src="{{ url_for('static', filename='spam blob.svg') }}" style="z-index:-1; position:absolute; left:50%; width:400px;">
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+        </div>
     </div>
 </body> 
 </html>
 <script>
-
+//setTimeout(function(){
+  //  document.getElementById("frontLine").style.animation = "repeat 8s forwards"
+//}, 2900)
 </script>
