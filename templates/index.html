@@ -121,10 +121,10 @@
         margin:5px;
     }
     .projectHolderRight{
-        height:600px; display:flex; align-items: center; max-width: 700px;padding-left: 40%; transition: 1s; opacity:0;
+        height:600px; display:flex; align-items: center; max-width: 700px;padding-left: 40%; transition: 1s; opacity:0; text-align: center;
     }
     .projectHolderLeft{
-        height:600px; display:flex; align-items: center; max-width: 700px;padding-left: 10%; transition: 1s; opacity:0;
+        height:600px; display:flex; align-items: center; max-width: 700px;padding-left: 10%; transition: 1s; opacity:0; text-align: center;
     }
     .projectRight{
         z-index:-1; position:absolute; left:50%; width:400px;
@@ -134,6 +134,12 @@
     }
     .inview{
         opacity:1;
+    }
+    #hostingHolder{
+        padding-left:45%;
+    }
+    #largeLogos{
+        display:flex; flex-direction: column; align-items: center;
     }
     @media screen and (max-width: 1000px) {
         .projectHolderRight{
@@ -148,6 +154,15 @@
         .projectLeft{
             z-index:-1; position:absolute; width:400px; left:0; right:0; margin-left:auto; margin-right:auto;
         }
+        #hostingHolder{
+            padding-left:100px;
+        }
+        #largeLogos{
+            display:none;
+        }
+        .header{
+            position:fixed;
+        }
     }
 
 </style>
@@ -158,11 +173,11 @@
 
     <div class="fullscreenFlex">
         <div style="text-align: center; width:40%;">
-            <h1>Modern, human-first web development.</h1>
+            <h1 id="titleText">Modern, human-first web development.</h1>
             <p>Scroll to learn how nwvbug aims to set the bar higher with human-first programming.</p>
         </div>
 
-        <div style="display:flex; flex-direction: column; align-items: center;">
+        <div id="largeLogos">
             <img src="{{ url_for('static', filename='nwvbug logo.png') }}" style="max-width: 40%;">
             <svg width="350" height="150" viewBox="0 0 527 196" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path id = "frontLine" d="M287.5 62.5V5M287.5 62.5C287.5 62.5 260.243 89.2633 239.5 98.5C226.126 104.455 209 97.3235 193 71.5M287.5 62.5C287.5 62.5 342.092 30.4304 358 37C372.221 42.8732 374.947 75.9236 397.25 91.5M496.489 191C496.489 191 484.196 140.77 496.489 118C511.798 89.6433 527.257 55.0202 519.5 42.5C509.489 26.3423 471.712 107.826 452.5 106C428.392 103.708 409.813 71.2242 397.25 91.5M193 71.5C193 98.0557 209 148.944 209 175.5M193 71.5C180.871 51.9237 126.858 17.5391 103.5 19C83.3865 20.258 18.9445 81.6427 8.49993 98.5C-5.48661 121.074 41.4999 141 74.5 146C107.5 151 69.5 191 69.5 191M397.25 91.5C397.25 118.056 327.577 111.387 320.5 141C317.414 153.914 341.5 180 341.5 180" stroke="#2E3440" stroke-width="10" stroke-linecap="round"/>
@@ -215,27 +230,27 @@
         
         <div class= "projectHolderLeft" id="langHolder">
             <img src="{{ url_for('static', filename='lang blob.svg') }}" class="projectLeft">
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <p> Lang Study was founded to compete with more expensive study programs on their own turf. Fully featured with cloudsaving, AI-Assistance, 5 study modes, and more, Lang gives a world-class studying experience to anyone who wants it. Lang Study was originally a nwvbug project, but is now a joint collaboration under Lye Software, Inc.</p>
         </div>
 
         <div class= "projectHolderRight" id="hostingHolder">
             <img src="{{ url_for('static', filename='hosting blob.svg') }}" class="projectRight" style="width:500px;">
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <p>nwvbug hosting was more of a necessity than a project. Hosting saved data from Lang Study and chat sessions from nwvbug chats would be pricey, and annoying to manage. However, there are no subscription costs if you own the servers.</p>
 
         </div>
 
         <div class= "projectHolderLeft" id="chatHolder">
             <img src="{{ url_for('static', filename='chats blob.svg') }}" class="projectLeft">
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <p>nwvbug chats is a worry-free way to interface with pre-existing chat applications. Currently working off of the Discord API, nwvbug chats allows you to send Discord messages on a more optimized client. More chat platforms coming soon!</p>
 
         </div>
 
         <div class= "projectHolderRight" id="spambotHolder">
             <img src="{{ url_for('static', filename='spam blob.svg') }}" class="projectRight">
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-
+            <p>spambot is a look into the possibility of AI. While less practically useful than Lang Study's Assistant, spambot still served as a research project into methods of prompting and memory for AI chat models.</p>
         </div>
     </div>
+    
 </body> 
 </html>
 <script>
@@ -251,14 +266,14 @@ window.addEventListener("scroll", (event) => {
         document.getElementById("hostingHolder").classList.add("inview");
     }
 
-    if (offset>document.getElementById("firstCloud").offsetTop && !document.getElementById("hostingLine").classList.contains("projectAnimationDefault")){
+    if (offset>document.getElementById("titleText").offsetTop && !document.getElementById("hostingLine").classList.contains("projectAnimationDefault")){
         document.getElementById("hostingLine").classList.add("projectAnimationDefault");
         setTimeout(function(){
             document.getElementById("langstudyLine").classList.add("projectAnimationAlt");
-        }, 3000);
+        }, 1000);
         setTimeout(function(){
             document.getElementById("chatLine").classList.add("projectAnimationAlt");
-        }, 6000)
+        }, 2000)
 
     }
 })
