@@ -31,7 +31,7 @@ SpamBot is a state-of-the-art AI Chatbot that currently has an interface through
 ## nwvbug Chats
 <img src="https://github.com/nwvbug/nwvbug-logos/blob/main/nwvbug%20Chats/lockup-nwvbugchats.png?raw=true" width="auto" height="125">
 
-While on a trip, I discovered that Discord is actually written quite inefficiently. On connection, you are sent a lot of information that is not necessary to have right away. It was annoying, as I was in a place with poor internet connection. nwvbug Chats fixes this issue by introducing a middleman server that strategically makes the Discord packets smaller, and doesn't send unnecessary information. Additionally, more information is stored locally, and is only sent if the server notices a change, as opposed to Discord's strategy of sending everything (like statuses, for example), even if they haven't changed. In progress. Eventually, this will occupy https://nwvbug.com, but not yet.
+While on a trip, I discovered that Discord is actually written quite inefficiently. On connection, you are sent a lot of information that is not necessary to have right away. It was annoying, as I was in a place with poor internet connection. nwvbug Chats fixes this issue by introducing a middleman server that strategically makes the Discord packets smaller, and doesn't send unnecessary information. Additionally, more information is stored locally, and is only sent if the server notices a change, as opposed to Discord's strategy of sending everything (like statuses, for example), even if they haven't changed. In progress. Eventually, this will occupy https://chat.nwvbug.com.
 
 
 
