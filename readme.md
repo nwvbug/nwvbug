@@ -12,7 +12,7 @@ Lang's Assistant will make Studysheets for you about any concept- you can even u
 
 #### Use our Train mode to learn new concepts, Mastery to lock them in, and take a Practice Test when you're ready.
 With Lang making Study Guides is easier than ever.
-You can harness the power of OpenAI's GPT-3.5-Turbo models to create study guides on topics that you need to know about.
+You can harness the power of GenAI to create study guides on topics that you need to know about.
 
 #### We don't track your data.
 Lang has no ads and is completely free to use. Forever. Lye Software promises to never take more data than is required for our service to function, and we promise to be transparent about what data we do collect.
