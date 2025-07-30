@@ -3,8 +3,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nwvbug</title>
+    <icon src=""></icon>
 </head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+    body{
+        background-color: black;
+        color:white;
+        font-family:"Host Grotesk", serif;
+        padding:0;
+        margin:0;
+        overflow:hidden;
+    }
+    h1{
+        font-size:50px;
+    }
+    .textcontainer{
+        float:right;
+        text-align: right;
+        padding-right:50px;
+        height:100vh;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    img{
+        position:absolute;
+        bottom:-120px;
+        left:-120px;
+        opacity:0.5;
+        transition:0.5s;
+    }
+    img:hover{
+        opacity:1;
+        transform: rotate(90deg) scale(0.5);
+    }
+    .linksholder{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        gap:20px;
+    }
+    .linksholder div{
+        font-size: 25px;
+        font-weight: 200;
+        letter-spacing: normal;
+        transition: 0.5s;
+        cursor:pointer;
+    }
+    .linksholder div:hover{
+        letter-spacing: 5px;
+        font-weight:600;
+    }
+    a{
+        color:white;
+        text-decoration: none;
+    }
+    @media (max-width:950px){
+        img:hover{
+        opacity:1;
+        transform: none;
+    }
+    }
+
+    @media(max-width:500px){
+        .textcontainer{
+            z-index:2;
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            padding:10px;
+            width:100vw;
+            text-align: center;
+            height:100vh;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        h1{
+            font-size:30px;
+        }
+    }
+</style>
 <body>
-    
+    <div class="textcontainer">
+        <h1>Making things I think are interesting.</h1>
+        <div class="linksholder">
+            <div><a href="https://ytm.nwvbug.com">YouTube Music Beautifier</a></div>
+            <div><a href="https://github.com/nwvbug">My GitHub</a></div>
+        </div>
+        
+    </div>
+    <img src="../static/nwvbugnobackground.png">
 </body>
 </html>
