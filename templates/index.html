@@ -19,8 +19,7 @@
         font-size:50px;
     }
     .textcontainer{
-        float:right;
-        text-align: right;
+        text-align: center;
         padding-right:50px;
         height:100vh;
         display:flex;
@@ -28,11 +27,8 @@
         justify-content: space-evenly;
     }
     img{
-        position:absolute;
-        bottom:-120px;
-        left:-120px;
-        opacity:0.5;
-        transition:0.5s;
+        height:50px;
+        transition: 0.5s;
     }
     img:hover{
         opacity:1;
@@ -59,14 +55,21 @@
         color:white;
         text-decoration: none;
     }
-    @media (max-width:950px){
-        img:hover{
-        opacity:1;
-        transform: none;
-    }
+
+
+    .header{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        gap:20px;
     }
 
-    @media(max-width:500px){
+
+    @media(max-width:1000px){
+        .header{
+            flex-direction: column;
+            gap:10px;
+        }
         .textcontainer{
             z-index:2;
             position:absolute;
@@ -89,13 +92,16 @@
 </style>
 <body>
     <div class="textcontainer">
-        <h1>Making things I think are interesting.</h1>
+        <div class="header">
+            <img src="https://nwvbug.com/assets/nwvbugnobackground.png">
+            <h1>Making things I think are interesting.</h1>
+        </div>
+        
         <div class="linksholder">
             <div><a href="https://ytm.nwvbug.com">YouTube Music Beautifier</a></div>
             <div><a href="https://github.com/nwvbug">My GitHub</a></div>
         </div>
         
     </div>
-    <img src="https://nwvbug.com/assets/nwvbugnobackground.png">
 </body>
 </html>
